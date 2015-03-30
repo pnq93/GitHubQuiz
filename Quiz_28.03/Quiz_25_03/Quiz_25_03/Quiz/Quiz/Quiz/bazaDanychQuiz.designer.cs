@@ -33,9 +33,9 @@ namespace Quiz
     partial void InsertGra(Gra instance);
     partial void UpdateGra(Gra instance);
     partial void DeleteGra(Gra instance);
-    partial void InsertZadane_Pytania(Zadane_Pytania instance);
-    partial void UpdateZadane_Pytania(Zadane_Pytania instance);
-    partial void DeleteZadane_Pytania(Zadane_Pytania instance);
+    partial void InsertUzytkownicy(Uzytkownicy instance);
+    partial void UpdateUzytkownicy(Uzytkownicy instance);
+    partial void DeleteUzytkownicy(Uzytkownicy instance);
     partial void InsertKategoria(Kategoria instance);
     partial void UpdateKategoria(Kategoria instance);
     partial void DeleteKategoria(Kategoria instance);
@@ -51,13 +51,13 @@ namespace Quiz
     partial void InsertUdzielona_odpowiedz(Udzielona_odpowiedz instance);
     partial void UpdateUdzielona_odpowiedz(Udzielona_odpowiedz instance);
     partial void DeleteUdzielona_odpowiedz(Udzielona_odpowiedz instance);
-    partial void InsertUzytkownicy(Uzytkownicy instance);
-    partial void UpdateUzytkownicy(Uzytkownicy instance);
-    partial void DeleteUzytkownicy(Uzytkownicy instance);
+    partial void InsertZadane_Pytania(Zadane_Pytania instance);
+    partial void UpdateZadane_Pytania(Zadane_Pytania instance);
+    partial void DeleteZadane_Pytania(Zadane_Pytania instance);
     #endregion
 		
 		public bazaDanychQuizDataContext() : 
-				base(global::Quiz.Properties.Settings.Default.bazaDanychQuizConnectionString1, mappingSource)
+				base(global::Quiz.Properties.Settings.Default.bazaDanychQuizConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -94,11 +94,11 @@ namespace Quiz
 			}
 		}
 		
-		public System.Data.Linq.Table<Zadane_Pytania> Zadane_Pytanias
+		public System.Data.Linq.Table<Uzytkownicy> Uzytkownicies
 		{
 			get
 			{
-				return this.GetTable<Zadane_Pytania>();
+				return this.GetTable<Uzytkownicy>();
 			}
 		}
 		
@@ -142,11 +142,11 @@ namespace Quiz
 			}
 		}
 		
-		public System.Data.Linq.Table<Uzytkownicy> Uzytkownicies
+		public System.Data.Linq.Table<Zadane_Pytania> Zadane_Pytanias
 		{
 			get
 			{
-				return this.GetTable<Uzytkownicy>();
+				return this.GetTable<Zadane_Pytania>();
 			}
 		}
 	}
@@ -330,23 +330,21 @@ namespace Quiz
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Zadane_Pytania")]
-	public partial class Zadane_Pytania : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Uzytkownicy")]
+	public partial class Uzytkownicy : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private int _id_gra;
+		private string _user_name;
 		
-		private int _id_pytania;
+		private string _password;
 		
-		private EntitySet<Udzielona_odpowiedz> _Udzielona_odpowiedzs;
+		private System.Nullable<int> _czy_admin;
 		
-		private EntityRef<Gra> _Gra;
-		
-		private EntityRef<Pytania> _Pytania;
+		private EntitySet<Gra> _Gras;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -354,17 +352,17 @@ namespace Quiz
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void Onid_graChanging(int value);
-    partial void Onid_graChanged();
-    partial void Onid_pytaniaChanging(int value);
-    partial void Onid_pytaniaChanged();
+    partial void Onuser_nameChanging(string value);
+    partial void Onuser_nameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void Onczy_adminChanging(System.Nullable<int> value);
+    partial void Onczy_adminChanged();
     #endregion
 		
-		public Zadane_Pytania()
+		public Uzytkownicy()
 		{
-			this._Udzielona_odpowiedzs = new EntitySet<Udzielona_odpowiedz>(new Action<Udzielona_odpowiedz>(this.attach_Udzielona_odpowiedzs), new Action<Udzielona_odpowiedz>(this.detach_Udzielona_odpowiedzs));
-			this._Gra = default(EntityRef<Gra>);
-			this._Pytania = default(EntityRef<Pytania>);
+			this._Gras = new EntitySet<Gra>(new Action<Gra>(this.attach_Gras), new Action<Gra>(this.detach_Gras));
 			OnCreated();
 		}
 		
@@ -388,132 +386,76 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_gra", DbType="Int NOT NULL")]
-		public int id_gra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string user_name
 		{
 			get
 			{
-				return this._id_gra;
+				return this._user_name;
 			}
 			set
 			{
-				if ((this._id_gra != value))
+				if ((this._user_name != value))
 				{
-					if (this._Gra.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_graChanging(value);
+					this.Onuser_nameChanging(value);
 					this.SendPropertyChanging();
-					this._id_gra = value;
-					this.SendPropertyChanged("id_gra");
-					this.Onid_graChanged();
+					this._user_name = value;
+					this.SendPropertyChanged("user_name");
+					this.Onuser_nameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pytania", DbType="Int NOT NULL")]
-		public int id_pytania
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string password
 		{
 			get
 			{
-				return this._id_pytania;
+				return this._password;
 			}
 			set
 			{
-				if ((this._id_pytania != value))
+				if ((this._password != value))
 				{
-					if (this._Pytania.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.Onid_pytaniaChanging(value);
+					this.OnpasswordChanging(value);
 					this.SendPropertyChanging();
-					this._id_pytania = value;
-					this.SendPropertyChanged("id_pytania");
-					this.Onid_pytaniaChanged();
+					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Zadane_Pytania_Udzielona_odpowiedz", Storage="_Udzielona_odpowiedzs", ThisKey="Id", OtherKey="id_zadane_pytanie")]
-		public EntitySet<Udzielona_odpowiedz> Udzielona_odpowiedzs
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_czy_admin", DbType="Int")]
+		public System.Nullable<int> czy_admin
 		{
 			get
 			{
-				return this._Udzielona_odpowiedzs;
+				return this._czy_admin;
 			}
 			set
 			{
-				this._Udzielona_odpowiedzs.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Gra_Zadane_Pytania", Storage="_Gra", ThisKey="id_gra", OtherKey="Id", IsForeignKey=true)]
-		public Gra Gra
-		{
-			get
-			{
-				return this._Gra.Entity;
-			}
-			set
-			{
-				Gra previousValue = this._Gra.Entity;
-				if (((previousValue != value) 
-							|| (this._Gra.HasLoadedOrAssignedValue == false)))
+				if ((this._czy_admin != value))
 				{
+					this.Onczy_adminChanging(value);
 					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Gra.Entity = null;
-						previousValue.Zadane_Pytanias.Remove(this);
-					}
-					this._Gra.Entity = value;
-					if ((value != null))
-					{
-						value.Zadane_Pytanias.Add(this);
-						this._id_gra = value.Id;
-					}
-					else
-					{
-						this._id_gra = default(int);
-					}
-					this.SendPropertyChanged("Gra");
+					this._czy_admin = value;
+					this.SendPropertyChanged("czy_admin");
+					this.Onczy_adminChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pytania_Zadane_Pytania", Storage="_Pytania", ThisKey="id_pytania", OtherKey="Id", IsForeignKey=true)]
-		public Pytania Pytania
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Uzytkownicy_Gra", Storage="_Gras", ThisKey="Id", OtherKey="id_uzytkownika")]
+		public EntitySet<Gra> Gras
 		{
 			get
 			{
-				return this._Pytania.Entity;
+				return this._Gras;
 			}
 			set
 			{
-				Pytania previousValue = this._Pytania.Entity;
-				if (((previousValue != value) 
-							|| (this._Pytania.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Pytania.Entity = null;
-						previousValue.Zadane_Pytanias.Remove(this);
-					}
-					this._Pytania.Entity = value;
-					if ((value != null))
-					{
-						value.Zadane_Pytanias.Add(this);
-						this._id_pytania = value.Id;
-					}
-					else
-					{
-						this._id_pytania = default(int);
-					}
-					this.SendPropertyChanged("Pytania");
-				}
+				this._Gras.Assign(value);
 			}
 		}
 		
@@ -537,16 +479,16 @@ namespace Quiz
 			}
 		}
 		
-		private void attach_Udzielona_odpowiedzs(Udzielona_odpowiedz entity)
+		private void attach_Gras(Gra entity)
 		{
 			this.SendPropertyChanging();
-			entity.Zadane_Pytania = this;
+			entity.Uzytkownicy = this;
 		}
 		
-		private void detach_Udzielona_odpowiedzs(Udzielona_odpowiedz entity)
+		private void detach_Gras(Gra entity)
 		{
 			this.SendPropertyChanging();
-			entity.Zadane_Pytania = null;
+			entity.Uzytkownicy = null;
 		}
 	}
 	
@@ -881,9 +823,9 @@ namespace Quiz
 		
 		private System.Nullable<int> _id_kategoria;
 		
-		private EntitySet<Zadane_Pytania> _Zadane_Pytanias;
-		
 		private EntitySet<Odpowiedzi> _Odpowiedzis;
+		
+		private EntitySet<Zadane_Pytania> _Zadane_Pytanias;
 		
 		private EntityRef<Kategoria> _Kategoria;
 		
@@ -905,8 +847,8 @@ namespace Quiz
 		
 		public Pytania()
 		{
-			this._Zadane_Pytanias = new EntitySet<Zadane_Pytania>(new Action<Zadane_Pytania>(this.attach_Zadane_Pytanias), new Action<Zadane_Pytania>(this.detach_Zadane_Pytanias));
 			this._Odpowiedzis = new EntitySet<Odpowiedzi>(new Action<Odpowiedzi>(this.attach_Odpowiedzis), new Action<Odpowiedzi>(this.detach_Odpowiedzis));
+			this._Zadane_Pytanias = new EntitySet<Zadane_Pytania>(new Action<Zadane_Pytania>(this.attach_Zadane_Pytanias), new Action<Zadane_Pytania>(this.detach_Zadane_Pytanias));
 			this._Kategoria = default(EntityRef<Kategoria>);
 			this._Typ_pytania = default(EntityRef<Typ_pytania>);
 			OnCreated();
@@ -1000,19 +942,6 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pytania_Zadane_Pytania", Storage="_Zadane_Pytanias", ThisKey="Id", OtherKey="id_pytania")]
-		public EntitySet<Zadane_Pytania> Zadane_Pytanias
-		{
-			get
-			{
-				return this._Zadane_Pytanias;
-			}
-			set
-			{
-				this._Zadane_Pytanias.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pytania_Odpowiedzi", Storage="_Odpowiedzis", ThisKey="Id", OtherKey="id_pytania")]
 		public EntitySet<Odpowiedzi> Odpowiedzis
 		{
@@ -1023,6 +952,19 @@ namespace Quiz
 			set
 			{
 				this._Odpowiedzis.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pytania_Zadane_Pytania", Storage="_Zadane_Pytanias", ThisKey="Id", OtherKey="id_pytania")]
+		public EntitySet<Zadane_Pytania> Zadane_Pytanias
+		{
+			get
+			{
+				return this._Zadane_Pytanias;
+			}
+			set
+			{
+				this._Zadane_Pytanias.Assign(value);
 			}
 		}
 		
@@ -1114,18 +1056,6 @@ namespace Quiz
 			}
 		}
 		
-		private void attach_Zadane_Pytanias(Zadane_Pytania entity)
-		{
-			this.SendPropertyChanging();
-			entity.Pytania = this;
-		}
-		
-		private void detach_Zadane_Pytanias(Zadane_Pytania entity)
-		{
-			this.SendPropertyChanging();
-			entity.Pytania = null;
-		}
-		
 		private void attach_Odpowiedzis(Odpowiedzi entity)
 		{
 			this.SendPropertyChanging();
@@ -1133,6 +1063,18 @@ namespace Quiz
 		}
 		
 		private void detach_Odpowiedzis(Odpowiedzi entity)
+		{
+			this.SendPropertyChanging();
+			entity.Pytania = null;
+		}
+		
+		private void attach_Zadane_Pytanias(Zadane_Pytania entity)
+		{
+			this.SendPropertyChanging();
+			entity.Pytania = this;
+		}
+		
+		private void detach_Zadane_Pytanias(Zadane_Pytania entity)
 		{
 			this.SendPropertyChanging();
 			entity.Pytania = null;
@@ -1445,21 +1387,23 @@ namespace Quiz
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Uzytkownicy")]
-	public partial class Uzytkownicy : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Zadane_Pytania")]
+	public partial class Zadane_Pytania : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
-		private string _user_name;
+		private int _id_gra;
 		
-		private string _password;
+		private int _id_pytania;
 		
-		private System.Nullable<int> _czy_admin;
+		private EntitySet<Udzielona_odpowiedz> _Udzielona_odpowiedzs;
 		
-		private EntitySet<Gra> _Gras;
+		private EntityRef<Gra> _Gra;
+		
+		private EntityRef<Pytania> _Pytania;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1467,17 +1411,17 @@ namespace Quiz
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void Onuser_nameChanging(string value);
-    partial void Onuser_nameChanged();
-    partial void OnpasswordChanging(string value);
-    partial void OnpasswordChanged();
-    partial void Onczy_adminChanging(System.Nullable<int> value);
-    partial void Onczy_adminChanged();
+    partial void Onid_graChanging(int value);
+    partial void Onid_graChanged();
+    partial void Onid_pytaniaChanging(int value);
+    partial void Onid_pytaniaChanged();
     #endregion
 		
-		public Uzytkownicy()
+		public Zadane_Pytania()
 		{
-			this._Gras = new EntitySet<Gra>(new Action<Gra>(this.attach_Gras), new Action<Gra>(this.detach_Gras));
+			this._Udzielona_odpowiedzs = new EntitySet<Udzielona_odpowiedz>(new Action<Udzielona_odpowiedz>(this.attach_Udzielona_odpowiedzs), new Action<Udzielona_odpowiedz>(this.detach_Udzielona_odpowiedzs));
+			this._Gra = default(EntityRef<Gra>);
+			this._Pytania = default(EntityRef<Pytania>);
 			OnCreated();
 		}
 		
@@ -1501,76 +1445,132 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_user_name", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string user_name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_gra", DbType="Int NOT NULL")]
+		public int id_gra
 		{
 			get
 			{
-				return this._user_name;
+				return this._id_gra;
 			}
 			set
 			{
-				if ((this._user_name != value))
+				if ((this._id_gra != value))
 				{
-					this.Onuser_nameChanging(value);
+					if (this._Gra.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_graChanging(value);
 					this.SendPropertyChanging();
-					this._user_name = value;
-					this.SendPropertyChanged("user_name");
-					this.Onuser_nameChanged();
+					this._id_gra = value;
+					this.SendPropertyChanged("id_gra");
+					this.Onid_graChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string password
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pytania", DbType="Int NOT NULL")]
+		public int id_pytania
 		{
 			get
 			{
-				return this._password;
+				return this._id_pytania;
 			}
 			set
 			{
-				if ((this._password != value))
+				if ((this._id_pytania != value))
 				{
-					this.OnpasswordChanging(value);
+					if (this._Pytania.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Onid_pytaniaChanging(value);
 					this.SendPropertyChanging();
-					this._password = value;
-					this.SendPropertyChanged("password");
-					this.OnpasswordChanged();
+					this._id_pytania = value;
+					this.SendPropertyChanged("id_pytania");
+					this.Onid_pytaniaChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_czy_admin", DbType="Int")]
-		public System.Nullable<int> czy_admin
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Zadane_Pytania_Udzielona_odpowiedz", Storage="_Udzielona_odpowiedzs", ThisKey="Id", OtherKey="id_zadane_pytanie")]
+		public EntitySet<Udzielona_odpowiedz> Udzielona_odpowiedzs
 		{
 			get
 			{
-				return this._czy_admin;
+				return this._Udzielona_odpowiedzs;
 			}
 			set
 			{
-				if ((this._czy_admin != value))
+				this._Udzielona_odpowiedzs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Gra_Zadane_Pytania", Storage="_Gra", ThisKey="id_gra", OtherKey="Id", IsForeignKey=true)]
+		public Gra Gra
+		{
+			get
+			{
+				return this._Gra.Entity;
+			}
+			set
+			{
+				Gra previousValue = this._Gra.Entity;
+				if (((previousValue != value) 
+							|| (this._Gra.HasLoadedOrAssignedValue == false)))
 				{
-					this.Onczy_adminChanging(value);
 					this.SendPropertyChanging();
-					this._czy_admin = value;
-					this.SendPropertyChanged("czy_admin");
-					this.Onczy_adminChanged();
+					if ((previousValue != null))
+					{
+						this._Gra.Entity = null;
+						previousValue.Zadane_Pytanias.Remove(this);
+					}
+					this._Gra.Entity = value;
+					if ((value != null))
+					{
+						value.Zadane_Pytanias.Add(this);
+						this._id_gra = value.Id;
+					}
+					else
+					{
+						this._id_gra = default(int);
+					}
+					this.SendPropertyChanged("Gra");
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Uzytkownicy_Gra", Storage="_Gras", ThisKey="Id", OtherKey="id_uzytkownika")]
-		public EntitySet<Gra> Gras
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Pytania_Zadane_Pytania", Storage="_Pytania", ThisKey="id_pytania", OtherKey="Id", IsForeignKey=true)]
+		public Pytania Pytania
 		{
 			get
 			{
-				return this._Gras;
+				return this._Pytania.Entity;
 			}
 			set
 			{
-				this._Gras.Assign(value);
+				Pytania previousValue = this._Pytania.Entity;
+				if (((previousValue != value) 
+							|| (this._Pytania.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Pytania.Entity = null;
+						previousValue.Zadane_Pytanias.Remove(this);
+					}
+					this._Pytania.Entity = value;
+					if ((value != null))
+					{
+						value.Zadane_Pytanias.Add(this);
+						this._id_pytania = value.Id;
+					}
+					else
+					{
+						this._id_pytania = default(int);
+					}
+					this.SendPropertyChanged("Pytania");
+				}
 			}
 		}
 		
@@ -1594,16 +1594,16 @@ namespace Quiz
 			}
 		}
 		
-		private void attach_Gras(Gra entity)
+		private void attach_Udzielona_odpowiedzs(Udzielona_odpowiedz entity)
 		{
 			this.SendPropertyChanging();
-			entity.Uzytkownicy = this;
+			entity.Zadane_Pytania = this;
 		}
 		
-		private void detach_Gras(Gra entity)
+		private void detach_Udzielona_odpowiedzs(Udzielona_odpowiedz entity)
 		{
 			this.SendPropertyChanging();
-			entity.Uzytkownicy = null;
+			entity.Zadane_Pytania = null;
 		}
 	}
 }

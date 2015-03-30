@@ -18,21 +18,43 @@ namespace Quiz
         public DodajAdmina()
         {
             InitializeComponent();
+            hasloAdminTB.PasswordChar = '*';
         }
 
         private void DodajAdminB_Click(object sender, EventArgs e)
         {
-            if (osoba == null)
+            if (loginAdminTB.Text == "" || hasloAdminTB.Text == "")
             {
-                osoba = new Uzytkownicy();
-                bazaDC.Uzytkownicies.InsertOnSubmit(osoba);
+                MessageBox.Show("Każde pole musi być wypełnione", "Błąd założenia konta");
             }
-            osoba.user_name = loginAdminTB.Text;
-            osoba.password = hash.SzyfrujMD5(hasloAdminTB.Text);
-            osoba.czy_admin = 1;
+            else
+            {
+                int czyIstnieje = 0;
+                foreach (Uzytkownicy u in baza.Polaczenie.Uzytkownicies)
+                {
+                    if (u.user_name == loginAdminTB.Text)
+                    {
+                        czyIstnieje = 1;
+                    }
+                }
+                if (czyIstnieje == 1)
+                {
+                    MessageBox.Show("Użytkownik istnieje", "Błąd");
+                }
+                else
+                {
+                    osoba = new Uzytkownicy();
 
-            bazaDC.SubmitChanges();
-            Close();
+
+                    osoba.user_name = loginAdminTB.Text;
+                    osoba.password = hash.SzyfrujMD5(hasloAdminTB.Text);
+                    osoba.czy_admin = 1;
+                    bazaDC.Uzytkownicies.InsertOnSubmit(osoba);
+                    bazaDC.SubmitChanges();
+                    Close();
+                }
+
+            }
         }
 
         private void DodajAdmina_Load(object sender, EventArgs e)

@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hasloAdminTB = new System.Windows.Forms.TextBox();
             this.loginAdminTB = new System.Windows.Forms.TextBox();
             this.DodajAdminB = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.hasloAdminTB = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // hasloAdminTB
-            // 
-            this.hasloAdminTB.Location = new System.Drawing.Point(99, 44);
-            this.hasloAdminTB.Name = "hasloAdminTB";
-            this.hasloAdminTB.Size = new System.Drawing.Size(100, 20);
-            this.hasloAdminTB.TabIndex = 0;
             // 
             // loginAdminTB
             // 
@@ -77,16 +70,23 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Hasło:";
             // 
+            // hasloAdminTB
+            // 
+            this.hasloAdminTB.Location = new System.Drawing.Point(99, 44);
+            this.hasloAdminTB.Name = "hasloAdminTB";
+            this.hasloAdminTB.Size = new System.Drawing.Size(100, 20);
+            this.hasloAdminTB.TabIndex = 5;
+            // 
             // DodajAdmina
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(235, 119);
+            this.Controls.Add(this.hasloAdminTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.DodajAdminB);
             this.Controls.Add(this.loginAdminTB);
-            this.Controls.Add(this.hasloAdminTB);
             this.Name = "DodajAdmina";
             this.Text = "DodajAdmina";
             this.Load += new System.EventHandler(this.DodajAdmina_Load);
@@ -97,10 +97,10 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox hasloAdminTB;
         private System.Windows.Forms.TextBox loginAdminTB;
         private System.Windows.Forms.Button DodajAdminB;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox hasloAdminTB;
     }
 }

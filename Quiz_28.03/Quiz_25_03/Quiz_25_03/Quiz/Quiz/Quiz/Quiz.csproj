@@ -90,6 +90,18 @@
     <Compile Include="Edycja.Designer.cs">
       <DependentUpon>Edycja.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdycjaOdpowiedzi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdycjaOdpowiedzi.Designer.cs">
+      <DependentUpon>EdycjaOdpowiedzi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EdycjaPytania.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdycjaPytania.Designer.cs">
+      <DependentUpon>EdycjaPytania.cs</DependentUpon>
+    </Compile>
     <Compile Include="EdycjaUzytkownika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +115,12 @@
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
     <Compile Include="Haszowanie.cs" />
+    <Compile Include="ListaPytan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListaPytan.Designer.cs">
+      <DependentUpon>ListaPytan.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logowanie.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +159,12 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="UsunPytanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsunPytanie.Designer.cs">
+      <DependentUpon>UsunPytanie.cs</DependentUpon>
+    </Compile>
     <Compile Include="UsuwanieUzytkownika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,8 +192,17 @@
     <EmbeddedResource Include="Edycja.resx">
       <DependentUpon>Edycja.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EdycjaOdpowiedzi.resx">
+      <DependentUpon>EdycjaOdpowiedzi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdycjaPytania.resx">
+      <DependentUpon>EdycjaPytania.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EdycjaUzytkownika.resx">
       <DependentUpon>EdycjaUzytkownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListaPytan.resx">
+      <DependentUpon>ListaPytan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewGamecs.resx">
       <DependentUpon>NewGamecs.cs</DependentUpon>
@@ -185,6 +218,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsunPytanie.resx">
+      <DependentUpon>UsunPytanie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsuwanieUzytkownika.resx">
       <DependentUpon>UsuwanieUzytkownika.cs</DependentUpon>

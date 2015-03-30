@@ -12,16 +12,16 @@ namespace Quiz
 {
     public partial class UsuwanieUzytkownika : Form
     {
-        bazaDanychQuizDataContext bazaDC = new bazaDanychQuizDataContext();
+
         public UsuwanieUzytkownika()
         {
             InitializeComponent();
-            foreach (Uzytkownicy u in bazaDC.Uzytkownicies)
+            foreach (Uzytkownicy u in baza.Polaczenie.Uzytkownicies)
             {
                 listBox1.Items.Add(u);
             }
             listBox1.DisplayMember = "user_name";
-          
+
         }
 
         private void listaUzytkownikow_TextChanged(object sender, EventArgs e)
@@ -51,15 +51,22 @@ namespace Quiz
 
         private void usun_Click(object sender, EventArgs e)
         {
-            var usunUzyt = bazaDC.Uzytkownicies.Where(u => u.user_name == listBox1.Text);
-                
-                {
-                    bazaDC.Uzytkownicies.DeleteAllOnSubmit(usunUzyt);
-                    bazaDC.SubmitChanges();
-                }
+            if (listBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego elementu", "Błąd usuwania");
+            }
+            else
+            {
+                var usunUzyt = baza.Polaczenie.Uzytkownicies.Where(u => u.user_name == listBox1.Text);
+
+                baza.Polaczenie.Uzytkownicies.DeleteAllOnSubmit(usunUzyt);
+                baza.Polaczenie.SubmitChanges();
+
                 listBox1.Refresh();
-            MessageBox.Show("Uzytkownik " + listBox1.Text + " został usunięty");
-            this.Close();
+                MessageBox.Show("Uzytkownik " + listBox1.Text + " został usunięty", "Usuwanie");
+                this.Close();
+            }
+
         }
     }
 }

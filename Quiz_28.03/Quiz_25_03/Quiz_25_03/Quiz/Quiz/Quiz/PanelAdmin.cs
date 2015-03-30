@@ -12,7 +12,7 @@ namespace Quiz
 {
     public partial class PanelAdmin : Form
     {
-        
+
         public PanelAdmin()
         {
             InitializeComponent();
@@ -46,6 +46,19 @@ namespace Quiz
         {
             //throw new NotImplementedException();
         }
+
+        private void buttonEdycjaPytania_Click(object sender, EventArgs e)
+        {
+            ListaPytan fe = new ListaPytan();
+            fe.Show();
+        }
+
+        private void buttonUsunPytanie_Click(object sender, EventArgs e)
+        {
+            UsunPytanie fe = new UsunPytanie();
+            fe.Show();
         }
     }
+}
+    
 

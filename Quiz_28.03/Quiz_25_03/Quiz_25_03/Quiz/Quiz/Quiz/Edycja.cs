@@ -14,6 +14,8 @@ namespace Quiz
     {
         private bazaDanychQuizDataContext bazaDC; 
         private Uzytkownicy uzytkownik;
+        private bazaDanychQuizDataContext bazaDanychQuizDataContext;
+        private Odpowiedzi odpowiedzi;
         public Edycja()
         {
             InitializeComponent();
@@ -25,11 +27,25 @@ namespace Quiz
             InitializeComponent();
             this.bazaDC = bazaDC;
             this.uzytkownik = osobaEdytowana;
-
-            textBoxUzytkownik.Text = uzytkownik.user_name;
+            if (uzytkownik == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego elementu", "Błąd edycji");
+            }
+            else
+            {
+textBoxUzytkownik.Text = uzytkownik.user_name;
             textBoxHaslo.Text = uzytkownik.password;
             textBoxAdmin.Text = uzytkownik.czy_admin.ToString();
+            }
+            
 
+        }
+
+        public Edycja(bazaDanychQuizDataContext bazaDanychQuizDataContext, Odpowiedzi odpowiedzi)
+        {
+            // TODO: Complete member initialization
+            this.bazaDanychQuizDataContext = bazaDanychQuizDataContext;
+            this.odpowiedzi = odpowiedzi;
         }
 
         private void Edycja_Load(object sender, EventArgs e)

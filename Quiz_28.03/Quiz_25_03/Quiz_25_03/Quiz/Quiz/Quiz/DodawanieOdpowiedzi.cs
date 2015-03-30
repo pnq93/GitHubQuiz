@@ -18,12 +18,15 @@ namespace Quiz
         {
             get { return odp; }
         }
+
+
         public DodawanieOdpowiedzi()
         {
             InitializeComponent();
             this.odp = new Odpowiedzi();
 
             textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
+           // checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", czy_poprawna, "czy_poprawna"));
            
             baza.Polaczenie.SubmitChanges();
         }

@@ -32,6 +32,8 @@
             this.usun_uzyt = new System.Windows.Forms.Button();
             this.dodAdmin = new System.Windows.Forms.Button();
             this.edycja = new System.Windows.Forms.Button();
+            this.buttonEdycjaPytania = new System.Windows.Forms.Button();
+            this.buttonUsunPytanie = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // dodaj_pyt
@@ -66,7 +68,7 @@
             // 
             // edycja
             // 
-            this.edycja.Location = new System.Drawing.Point(274, 12);
+            this.edycja.Location = new System.Drawing.Point(31, 62);
             this.edycja.Name = "edycja";
             this.edycja.Size = new System.Drawing.Size(75, 44);
             this.edycja.TabIndex = 3;
@@ -74,11 +76,33 @@
             this.edycja.UseVisualStyleBackColor = true;
             this.edycja.Click += new System.EventHandler(this.edycja_Click);
             // 
+            // buttonEdycjaPytania
+            // 
+            this.buttonEdycjaPytania.Location = new System.Drawing.Point(112, 62);
+            this.buttonEdycjaPytania.Name = "buttonEdycjaPytania";
+            this.buttonEdycjaPytania.Size = new System.Drawing.Size(75, 46);
+            this.buttonEdycjaPytania.TabIndex = 4;
+            this.buttonEdycjaPytania.Text = "Edycja pytania";
+            this.buttonEdycjaPytania.UseVisualStyleBackColor = true;
+            this.buttonEdycjaPytania.Click += new System.EventHandler(this.buttonEdycjaPytania_Click);
+            // 
+            // buttonUsunPytanie
+            // 
+            this.buttonUsunPytanie.Location = new System.Drawing.Point(193, 62);
+            this.buttonUsunPytanie.Name = "buttonUsunPytanie";
+            this.buttonUsunPytanie.Size = new System.Drawing.Size(75, 46);
+            this.buttonUsunPytanie.TabIndex = 5;
+            this.buttonUsunPytanie.Text = "Usuń pytanie";
+            this.buttonUsunPytanie.UseVisualStyleBackColor = true;
+            this.buttonUsunPytanie.Click += new System.EventHandler(this.buttonUsunPytanie_Click);
+            // 
             // PanelAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 70);
+            this.ClientSize = new System.Drawing.Size(295, 114);
+            this.Controls.Add(this.buttonUsunPytanie);
+            this.Controls.Add(this.buttonEdycjaPytania);
             this.Controls.Add(this.edycja);
             this.Controls.Add(this.dodAdmin);
             this.Controls.Add(this.usun_uzyt);
@@ -95,5 +119,7 @@
         private System.Windows.Forms.Button usun_uzyt;
         private System.Windows.Forms.Button dodAdmin;
         private System.Windows.Forms.Button edycja;
+        private System.Windows.Forms.Button buttonEdycjaPytania;
+        private System.Windows.Forms.Button buttonUsunPytanie;
     }
 }

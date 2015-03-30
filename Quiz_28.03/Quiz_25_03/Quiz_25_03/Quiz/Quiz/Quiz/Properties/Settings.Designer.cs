@@ -79,5 +79,17 @@ namespace Quiz.Properties {
                 return ((string)(this["bazaDanychQuizConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=E:\\Inżynieria\\Ćwiczenia\\GH\\GitHubQui" +
+            "z\\Quiz_28.03\\Quiz_25_03\\Quiz_25_03\\Quiz\\bazaDanychQuiz.mdf;Integrated Security=T" +
+            "rue;Connect Timeout=30")]
+        public string bazaDanychQuizConnectionString2 {
+            get {
+                return ((string)(this["bazaDanychQuizConnectionString2"]));
+            }
+        }
     }
 }

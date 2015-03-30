@@ -16,6 +16,7 @@ namespace Quiz
     {
 
         bazaDanychQuizDataContext bazaDC = new bazaDanychQuizDataContext();
+        Haszowanie hasz;
         public Logowanie()
         {
          

@@ -12,11 +12,10 @@ namespace Quiz
 {
     public partial class Rejestracja : Form
     {
-       // private bazaQuizDataContext bazaDC;
-        
+
+
         Haszowanie hash = new Haszowanie();
         private Uzytkownicy osoba;
-        bazaDanychQuizDataContext bazaDC = new bazaDanychQuizDataContext();
         public Rejestracja()
         {
             InitializeComponent();
@@ -25,25 +24,37 @@ namespace Quiz
 
         private void dodaj_Click(object sender, EventArgs e)
         {
-            if (osoba == null)
+            if (nowyUzytkownik.Text == "" || noweHaslo.Text == "")
             {
-                osoba = new Uzytkownicy();
-                bazaDC.Uzytkownicies.InsertOnSubmit(osoba);
-            }
-            osoba.user_name = nowyUzytkownik.Text;
-            osoba.password = hash.SzyfrujMD5(noweHaslo.Text);
-            osoba.czy_admin = 0;
-            if (osoba.user_name != nowyUzytkownik.Text)
-            {          
-                bazaDC.SubmitChanges();
+                MessageBox.Show("Uzupełnij każde pole w formularzu", "Błąd rejestracji");
             }
             else
             {
-                MessageBox.Show("Taki użytkownik istnieje", "Błąd");
-                return;
+                int czyIstnieje = 0;
+                foreach (Uzytkownicy u in baza.Polaczenie.Uzytkownicies)
+                {
+                    if (u.user_name == nowyUzytkownik.Text)
+                    {
+                        czyIstnieje = 1;
+                    }
+                }
+                if (czyIstnieje == 1)
+                {
+                    MessageBox.Show("Użytkownik istnieje", "Błąd");
+                }
+                else
+                {
+                    osoba = new Uzytkownicy();
+                    osoba.user_name = nowyUzytkownik.Text;
+                    osoba.password = hash.SzyfrujMD5(noweHaslo.Text);
+                    osoba.czy_admin = 0;
+                    baza.Polaczenie.Uzytkownicies.InsertOnSubmit(osoba);
+                    baza.Polaczenie.SubmitChanges();
+                    Close();
+                }
             }
-            Close();
         }
+
 
         private void Rejestracja_Load(object sender, EventArgs e)
         {
@@ -54,6 +65,8 @@ namespace Quiz
         {
 
         }
-        }
     }
+}
+
+
 
