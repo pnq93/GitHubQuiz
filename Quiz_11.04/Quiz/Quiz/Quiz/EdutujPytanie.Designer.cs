@@ -40,42 +40,38 @@
             this.buttonUsun = new System.Windows.Forms.Button();
             this.comboBoxIleOdp = new System.Windows.Forms.ComboBox();
             this.buttonDodajOdp = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPoziom)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxPytania
             // 
             this.listBoxPytania.FormattingEnabled = true;
-            this.listBoxPytania.ItemHeight = 16;
-            this.listBoxPytania.Location = new System.Drawing.Point(16, 15);
-            this.listBoxPytania.Margin = new System.Windows.Forms.Padding(4);
+            this.listBoxPytania.Location = new System.Drawing.Point(12, 12);
             this.listBoxPytania.Name = "listBoxPytania";
-            this.listBoxPytania.Size = new System.Drawing.Size(201, 340);
+            this.listBoxPytania.Size = new System.Drawing.Size(152, 277);
             this.listBoxPytania.TabIndex = 0;
             // 
             // textBoxPytanie
             // 
-            this.textBoxPytanie.Location = new System.Drawing.Point(259, 15);
-            this.textBoxPytanie.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxPytanie.Location = new System.Drawing.Point(230, 9);
             this.textBoxPytanie.Name = "textBoxPytanie";
-            this.textBoxPytanie.Size = new System.Drawing.Size(475, 22);
+            this.textBoxPytanie.Size = new System.Drawing.Size(304, 20);
             this.textBoxPytanie.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
-            this.panel1.Location = new System.Drawing.Point(259, 155);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(186, 121);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(476, 177);
+            this.panel1.Size = new System.Drawing.Size(365, 168);
             this.panel1.TabIndex = 2;
             // 
             // buttonEdytuj
             // 
-            this.buttonEdytuj.Location = new System.Drawing.Point(16, 368);
-            this.buttonEdytuj.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEdytuj.Location = new System.Drawing.Point(12, 299);
             this.buttonEdytuj.Name = "buttonEdytuj";
-            this.buttonEdytuj.Size = new System.Drawing.Size(135, 42);
+            this.buttonEdytuj.Size = new System.Drawing.Size(101, 34);
             this.buttonEdytuj.TabIndex = 3;
             this.buttonEdytuj.Text = "Edytuj";
             this.buttonEdytuj.UseVisualStyleBackColor = true;
@@ -83,47 +79,42 @@
             // 
             // numericUpDownPoziom
             // 
-            this.numericUpDownPoziom.Location = new System.Drawing.Point(353, 47);
-            this.numericUpDownPoziom.Margin = new System.Windows.Forms.Padding(4);
+            this.numericUpDownPoziom.Location = new System.Drawing.Point(241, 39);
             this.numericUpDownPoziom.Name = "numericUpDownPoziom";
-            this.numericUpDownPoziom.Size = new System.Drawing.Size(59, 22);
+            this.numericUpDownPoziom.Size = new System.Drawing.Size(44, 20);
             this.numericUpDownPoziom.TabIndex = 0;
             // 
             // comboBoxKategoria
             // 
             this.comboBoxKategoria.FormattingEnabled = true;
-            this.comboBoxKategoria.Location = new System.Drawing.Point(353, 79);
-            this.comboBoxKategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxKategoria.Location = new System.Drawing.Point(241, 65);
             this.comboBoxKategoria.Name = "comboBoxKategoria";
-            this.comboBoxKategoria.Size = new System.Drawing.Size(207, 24);
+            this.comboBoxKategoria.Size = new System.Drawing.Size(156, 21);
             this.comboBoxKategoria.TabIndex = 4;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(276, 49);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(183, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 17);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "Poziom";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(276, 82);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(183, 68);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 17);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 6;
             this.label2.Text = "Kategoria";
             // 
             // buttonZapisz
             // 
-            this.buttonZapisz.Location = new System.Drawing.Point(159, 368);
-            this.buttonZapisz.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonZapisz.Location = new System.Drawing.Point(119, 299);
             this.buttonZapisz.Name = "buttonZapisz";
-            this.buttonZapisz.Size = new System.Drawing.Size(135, 42);
+            this.buttonZapisz.Size = new System.Drawing.Size(101, 34);
             this.buttonZapisz.TabIndex = 7;
             this.buttonZapisz.Text = "Zapisz";
             this.buttonZapisz.UseVisualStyleBackColor = true;
@@ -131,10 +122,9 @@
             // 
             // buttonUsun
             // 
-            this.buttonUsun.Location = new System.Drawing.Point(301, 368);
-            this.buttonUsun.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonUsun.Location = new System.Drawing.Point(226, 299);
             this.buttonUsun.Name = "buttonUsun";
-            this.buttonUsun.Size = new System.Drawing.Size(135, 42);
+            this.buttonUsun.Size = new System.Drawing.Size(101, 34);
             this.buttonUsun.TabIndex = 8;
             this.buttonUsun.Text = "Usuń";
             this.buttonUsun.UseVisualStyleBackColor = true;
@@ -154,28 +144,36 @@
             "8",
             "9",
             "10"});
-            this.comboBoxIleOdp.Location = new System.Drawing.Point(353, 112);
-            this.comboBoxIleOdp.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxIleOdp.Location = new System.Drawing.Point(186, 94);
             this.comboBoxIleOdp.Name = "comboBoxIleOdp";
-            this.comboBoxIleOdp.Size = new System.Drawing.Size(96, 24);
+            this.comboBoxIleOdp.Size = new System.Drawing.Size(73, 21);
             this.comboBoxIleOdp.TabIndex = 9;
             // 
             // buttonDodajOdp
             // 
-            this.buttonDodajOdp.Location = new System.Drawing.Point(476, 110);
-            this.buttonDodajOdp.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDodajOdp.Location = new System.Drawing.Point(274, 92);
             this.buttonDodajOdp.Name = "buttonDodajOdp";
-            this.buttonDodajOdp.Size = new System.Drawing.Size(155, 28);
+            this.buttonDodajOdp.Size = new System.Drawing.Size(116, 23);
             this.buttonDodajOdp.TabIndex = 10;
             this.buttonDodajOdp.Text = "Dodaj odpowiedź";
             this.buttonDodajOdp.UseVisualStyleBackColor = true;
             this.buttonDodajOdp.Click += new System.EventHandler(this.buttonDodajOdp_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(182, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 13);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "Pytanie";
+            // 
             // EdutujPytanie
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 425);
+            this.ClientSize = new System.Drawing.Size(563, 345);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonDodajOdp);
             this.Controls.Add(this.comboBoxIleOdp);
             this.Controls.Add(this.buttonUsun);
@@ -188,7 +186,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBoxPytanie);
             this.Controls.Add(this.listBoxPytania);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EdutujPytanie";
             this.Text = "EdutujPytanie";
             this.Load += new System.EventHandler(this.EdutujPytanie_Load);
@@ -212,5 +209,6 @@
         private System.Windows.Forms.Button buttonUsun;
         private System.Windows.Forms.ComboBox comboBoxIleOdp;
         private System.Windows.Forms.Button buttonDodajOdp;
+        private System.Windows.Forms.Label label3;
     }
 }
