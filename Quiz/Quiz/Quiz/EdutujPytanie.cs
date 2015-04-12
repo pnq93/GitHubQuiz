@@ -16,6 +16,8 @@ namespace Quiz
         Pytania pyt1 = new Pytania();
         int pom=0;
         int pom2;
+        Kategoria k;
+        DodawanieOdpowiedzi gen;
         
         public EdutujPytanie()
         {
@@ -31,6 +33,8 @@ namespace Quiz
 
         private void EdutujPytanie_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bazaDanychQuizDataSet.Kategoria' table. You can move, or remove it, as needed.
+       
 
         }
 
@@ -69,9 +73,7 @@ namespace Quiz
         }
        
         private void buttonZapisz_Click(object sender, EventArgs e)
-        {
-
-            
+        {   
             if (pom == 0)
            {
                if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria == null)
@@ -82,15 +84,37 @@ namespace Quiz
                else
                {
                    pyt1.tresc = textBoxPytanie.Text;
+                   // if (comboBoxKategoria == baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text))
+                   // {
                    pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                   // }
+                   // else
+                   // {
+                   //  Kategoria kat = new Kategoria();
+                   //  kat.nazwa = comboBoxKategoria.Text;
+                   //   baza.Polaczenie.Kategorias.InsertOnSubmit(kat);
+                   //    baza.Polaczenie.SubmitChanges();
+                   //     pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+
+                   // }
+                   //   if(numericUpDownPoziom == baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value))
+                   //   {
                    pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                   //   }
+                   //   else
+                   //   {
+                   //    Typ_pytania typ = new Typ_pytania();
+                   //    typ.poziom = Convert.ToInt32(numericUpDownPoziom.Value);
+                   //    baza.Polaczenie.Typ_pytanias.InsertOnSubmit(typ);
+                   //    baza.Polaczenie.SubmitChanges();
+                   //     pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                   // }
                    baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
                }
             
            }
             else if (pom == 1)
-            {
-              
+            {           
                     npyt = listBoxPytania.SelectedItem as Pytania;
                     pom2 = npyt.Id;
                     npyt.tresc = textBoxPytanie.Text;
@@ -99,6 +123,7 @@ namespace Quiz
                     pom = 0;
                 
             }
+            
             baza.Polaczenie.SubmitChanges();
             wczytajPytania();
             textBoxPytanie.Text = "";
@@ -172,6 +197,18 @@ namespace Quiz
                     npyt.Odpowiedzis.Add(generator.OdpowiedziDane);
                 }
             }
+        }
+
+        private void buttonUsunPoziom_Click(object sender, EventArgs e)
+        {
+            k.nazwa = comboBoxKategoria.Text;
+            baza.Polaczenie.Kategorias.DeleteOnSubmit(k);
+            baza.Polaczenie.SubmitChanges();
+        }
+
+        private void buttonEdytujKategoria_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

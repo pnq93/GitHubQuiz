@@ -12,7 +12,6 @@ namespace Quiz
 {
     public partial class DodawanieOdpowiedzi : UserControl
     {
-
         private Odpowiedzi odp;
         private int forma;
         public Odpowiedzi OdpowiedziDane
@@ -31,7 +30,7 @@ namespace Quiz
 
             this.checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
 
-            
+          
                 baza.Polaczenie.SubmitChanges();
             }
         }
@@ -41,34 +40,36 @@ namespace Quiz
         {
             InitializeComponent();
             this.odp = new Odpowiedzi();
-       
+         
                 textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
 
                 this.checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
-     
+            
         }
 
         public DodawanieOdpowiedzi(Odpowiedzi odp)
         {
             InitializeComponent();
             this.odp = odp;
-
-            textBoxOdpowiedz.Text = odp.odp;
-
-            textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
-
-            this.checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
-
-            if (odp.czy_poprawna == 1)
+            if (odp.odp != ""  || checkBoxCzyPrawda.Checked == true)
             {
-                checkBoxCzyPrawda.Checked = true;
-            }
-            else
-            {
-                checkBoxCzyPrawda.Checked = false;
-            }
+                textBoxOdpowiedz.Text = odp.odp;
 
-            baza.Polaczenie.SubmitChanges();
+                textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
+
+                this.checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
+
+               if (odp.czy_poprawna == 1)
+                {
+                    checkBoxCzyPrawda.Checked = true;
+                }
+                else
+                {
+                    checkBoxCzyPrawda.Checked = false;
+                }
+
+                baza.Polaczenie.SubmitChanges();
+            }
         }
 
 

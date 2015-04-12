@@ -125,7 +125,7 @@
             this.dalej.Name = "dalej";
             this.dalej.Size = new System.Drawing.Size(93, 40);
             this.dalej.TabIndex = 9;
-            this.dalej.Text = "następne pytanie";
+            this.dalej.Text = "Następne pytanie";
             this.dalej.UseVisualStyleBackColor = true;
             this.dalej.Click += new System.EventHandler(this.dalej_Click);
             // 

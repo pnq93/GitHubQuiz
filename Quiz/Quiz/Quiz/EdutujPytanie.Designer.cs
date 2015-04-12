@@ -54,7 +54,7 @@
             // 
             // textBoxPytanie
             // 
-            this.textBoxPytanie.Location = new System.Drawing.Point(230, 9);
+            this.textBoxPytanie.Location = new System.Drawing.Point(241, 9);
             this.textBoxPytanie.Name = "textBoxPytanie";
             this.textBoxPytanie.Size = new System.Drawing.Size(304, 20);
             this.textBoxPytanie.TabIndex = 1;
