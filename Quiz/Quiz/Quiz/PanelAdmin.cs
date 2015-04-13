@@ -20,8 +20,7 @@ namespace Quiz
 
         private void dodaj_pyt_Click(object sender, EventArgs e)
         {
-            var Form = new DodajPytanie();
-            Form.Show();
+           
         }
 
         private void usun_uzyt_Click(object sender, EventArgs e)

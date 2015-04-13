@@ -11,15 +11,13 @@ using System.Windows.Forms;
 namespace Quiz
 {
     public partial class DodawanieOdpowiedzi : UserControl
-    {
-        
+    {  
         private Odpowiedzi odp;
         private int forma;
         public Odpowiedzi OdpowiedziDane
         {
             get { return odp; }
         }
-
 
         public DodawanieOdpowiedzi(int forma)
         {
@@ -43,22 +41,18 @@ namespace Quiz
             this.odp = new Odpowiedzi();
          
                 textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
-
-                this.checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
-            
+                checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));       
         }
 
         public DodawanieOdpowiedzi(Odpowiedzi odp)
         {
             InitializeComponent();
             this.odp = odp;
-            if (odp.odp != ""  || checkBoxCzyPrawda.Checked == true)
-            {
-                textBoxOdpowiedz.Text = odp.odp;
+           
+               // textBoxOdpowiedz.Text = odp.odp;
 
                 textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
-
-                this.checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
+                checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
 
                if (odp.czy_poprawna == 1)
                 {
@@ -68,13 +62,7 @@ namespace Quiz
                 {
                     checkBoxCzyPrawda.Checked = false;
                 }
-
-                baza.Polaczenie.SubmitChanges();
-            }
-            else
-            {
-                MessageBox.Show("Puste pole");
-            }
+                baza.Polaczenie.SubmitChanges();   
         }
 
 

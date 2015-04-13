@@ -340,7 +340,6 @@ E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\bin\Debug\Quiz.exe
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\bin\Debug\Quiz.pdb
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.csprojResolveAssemblyReference.cache
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.DodajAdmina.resources
-E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.DodajPytanie.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.DodajUzytkownika.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.DodawanieOdpowiedzi.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.EdutujPytanie.resources

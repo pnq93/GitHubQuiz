@@ -77,12 +77,6 @@
     <Compile Include="DodajAdmina.Designer.cs">
       <DependentUpon>DodajAdmina.cs</DependentUpon>
     </Compile>
-    <Compile Include="DodajPytanie.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DodajPytanie.Designer.cs">
-      <DependentUpon>DodajPytanie.cs</DependentUpon>
-    </Compile>
     <Compile Include="DodajUzytkownika.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,9 +163,6 @@
     </None>
     <EmbeddedResource Include="DodajAdmina.resx">
       <DependentUpon>DodajAdmina.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DodajPytanie.resx">
-      <DependentUpon>DodajPytanie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DodajUzytkownika.resx">
       <DependentUpon>DodajUzytkownika.cs</DependentUpon>
