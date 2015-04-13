@@ -12,6 +12,7 @@ namespace Quiz
 {
     public partial class DodawanieOdpowiedzi : UserControl
     {
+        
         private Odpowiedzi odp;
         private int forma;
         public Odpowiedzi OdpowiedziDane
@@ -69,6 +70,10 @@ namespace Quiz
                 }
 
                 baza.Polaczenie.SubmitChanges();
+            }
+            else
+            {
+                MessageBox.Show("Puste pole");
             }
         }
 

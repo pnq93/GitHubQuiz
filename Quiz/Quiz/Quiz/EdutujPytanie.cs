@@ -14,11 +14,9 @@ namespace Quiz
     {
         Pytania npyt;
         Pytania pyt1 = new Pytania();
-        int pom=0;
+        int pom = 0;
         int pom2;
-        Kategoria k;
-        DodawanieOdpowiedzi gen;
-        
+
         public EdutujPytanie()
         {
             InitializeComponent();
@@ -34,7 +32,7 @@ namespace Quiz
         private void EdutujPytanie_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bazaDanychQuizDataSet.Kategoria' table. You can move, or remove it, as needed.
-       
+
 
         }
 
@@ -71,59 +69,39 @@ namespace Quiz
                 }
             }
         }
-       
+
         private void buttonZapisz_Click(object sender, EventArgs e)
-        {   
+        {
             if (pom == 0)
-           {
-               if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria == null)
-               {
+            {
+                if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria == null)
+                {
 
-                   MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-               }
-               else
-               {
-                   pyt1.tresc = textBoxPytanie.Text;
-                   // if (comboBoxKategoria == baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text))
-                   // {
-                   pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                   // }
-                   // else
-                   // {
-                   //  Kategoria kat = new Kategoria();
-                   //  kat.nazwa = comboBoxKategoria.Text;
-                   //   baza.Polaczenie.Kategorias.InsertOnSubmit(kat);
-                   //    baza.Polaczenie.SubmitChanges();
-                   //     pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                    MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                }
+                else
+                {
+                    pyt1.tresc = textBoxPytanie.Text;
 
-                   // }
-                   //   if(numericUpDownPoziom == baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value))
-                   //   {
-                   pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                   //   }
-                   //   else
-                   //   {
-                   //    Typ_pytania typ = new Typ_pytania();
-                   //    typ.poziom = Convert.ToInt32(numericUpDownPoziom.Value);
-                   //    baza.Polaczenie.Typ_pytanias.InsertOnSubmit(typ);
-                   //    baza.Polaczenie.SubmitChanges();
-                   //     pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                   // }
-                   baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-               }
-            
-           }
-            else if (pom == 1)
-            {           
-                    npyt = listBoxPytania.SelectedItem as Pytania;
-                    pom2 = npyt.Id;
-                    npyt.tresc = textBoxPytanie.Text;
-                    npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                    npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                    pom = 0;
-                
+                    pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+
+                    pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+
+                    baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                }
+
             }
-            
+            else if (pom == 1)
+            {
+                npyt = listBoxPytania.SelectedItem as Pytania;
+                pom2 = npyt.Id;
+                npyt.tresc = textBoxPytanie.Text;
+                npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                pom = 0;
+            }
+
+           
             baza.Polaczenie.SubmitChanges();
             wczytajPytania();
             textBoxPytanie.Text = "";
@@ -164,7 +142,7 @@ namespace Quiz
         {
             if (pom == 0)
             {
-                
+
                 string ile = comboBoxIleOdp.Text;
                 Int32 ileOdpowiedzi = Convert.ToInt32(ile);
                 int move = 0;
@@ -201,14 +179,30 @@ namespace Quiz
 
         private void buttonUsunPoziom_Click(object sender, EventArgs e)
         {
-            k.nazwa = comboBoxKategoria.Text;
-            baza.Polaczenie.Kategorias.DeleteOnSubmit(k);
-            baza.Polaczenie.SubmitChanges();
+
         }
 
         private void buttonEdytujKategoria_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void buttonCzysc_Click(object sender, EventArgs e)
+        {
+            pom = 0;
+         
+            textBoxPytanie.Text = "";
+            numericUpDownPoziom.Value = 0;
+            comboBoxIleOdp.Text = "";
+            comboBoxKategoria.Text = "";
+            panel1.Controls.Clear();
+        }
+
+        private void buttonZapisz_MouseClick(object sender, MouseEventArgs e)
+        {
+            DodawanieOdpowiedzi g;
             
         }
     }
 }
+    

@@ -12,6 +12,8 @@ namespace Quiz
 {
     public partial class Game : Form
     {
+        Gra gra = new Gra();
+        Uzytkownicy u = new Uzytkownicy();
         public Game()
         {
             InitializeComponent();
@@ -32,8 +34,14 @@ namespace Quiz
 
         private void newgame_Click(object sender, EventArgs e)
         {
+
+            gra.data_rozgrywki = DateTime.Now;
+            
+            baza.Polaczenie.Gras.InsertOnSubmit(gra);
+          //  baza.Polaczenie.SubmitChanges();
             var Form = new NewGamecs();
             Form.Show();
+
         }
 
         private void quit_Click(object sender, EventArgs e)

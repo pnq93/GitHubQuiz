@@ -41,6 +41,7 @@
             this.comboBoxIleOdp = new System.Windows.Forms.ComboBox();
             this.buttonDodajOdp = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonCzysc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPoziom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +88,15 @@
             // comboBoxKategoria
             // 
             this.comboBoxKategoria.FormattingEnabled = true;
+            this.comboBoxKategoria.Items.AddRange(new object[] {
+            "Sport",
+            "Matematyka",
+            "Informatyka",
+            "Przyroda",
+            "J.Polski",
+            "Kultura",
+            "Muzyka ",
+            "Geografia"});
             this.comboBoxKategoria.Location = new System.Drawing.Point(241, 65);
             this.comboBoxKategoria.Name = "comboBoxKategoria";
             this.comboBoxKategoria.Size = new System.Drawing.Size(156, 21);
@@ -119,6 +129,7 @@
             this.buttonZapisz.Text = "Zapisz";
             this.buttonZapisz.UseVisualStyleBackColor = true;
             this.buttonZapisz.Click += new System.EventHandler(this.buttonZapisz_Click);
+            this.buttonZapisz.MouseClick += new System.Windows.Forms.MouseEventHandler(this.buttonZapisz_MouseClick);
             // 
             // buttonUsun
             // 
@@ -168,11 +179,22 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Pytanie";
             // 
+            // buttonCzysc
+            // 
+            this.buttonCzysc.Location = new System.Drawing.Point(333, 299);
+            this.buttonCzysc.Name = "buttonCzysc";
+            this.buttonCzysc.Size = new System.Drawing.Size(101, 34);
+            this.buttonCzysc.TabIndex = 12;
+            this.buttonCzysc.Text = "Czyść pola ";
+            this.buttonCzysc.UseVisualStyleBackColor = true;
+            this.buttonCzysc.Click += new System.EventHandler(this.buttonCzysc_Click);
+            // 
             // EdutujPytanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(563, 345);
+            this.Controls.Add(this.buttonCzysc);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonDodajOdp);
             this.Controls.Add(this.comboBoxIleOdp);
@@ -210,5 +232,6 @@
         private System.Windows.Forms.ComboBox comboBoxIleOdp;
         private System.Windows.Forms.Button buttonDodajOdp;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonCzysc;
     }
 }

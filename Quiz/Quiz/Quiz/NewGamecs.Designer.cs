@@ -47,9 +47,9 @@
             this.odp3.AutoSize = true;
             this.odp3.Location = new System.Drawing.Point(6, 75);
             this.odp3.Name = "odp3";
-            this.odp3.Size = new System.Drawing.Size(80, 17);
+            this.odp3.Size = new System.Drawing.Size(88, 17);
             this.odp3.TabIndex = 5;
-            this.odp3.Text = "checkBox1";
+            this.odp3.Text = "Odpowiedź 3";
             this.odp3.UseVisualStyleBackColor = true;
             this.odp3.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
@@ -58,9 +58,9 @@
             this.odp4.AutoSize = true;
             this.odp4.Location = new System.Drawing.Point(6, 98);
             this.odp4.Name = "odp4";
-            this.odp4.Size = new System.Drawing.Size(80, 17);
+            this.odp4.Size = new System.Drawing.Size(88, 17);
             this.odp4.TabIndex = 6;
-            this.odp4.Text = "checkBox2";
+            this.odp4.Text = "Odpowiedź 4";
             this.odp4.UseVisualStyleBackColor = true;
             // 
             // odp1
@@ -68,9 +68,9 @@
             this.odp1.AutoSize = true;
             this.odp1.Location = new System.Drawing.Point(6, 29);
             this.odp1.Name = "odp1";
-            this.odp1.Size = new System.Drawing.Size(80, 17);
+            this.odp1.Size = new System.Drawing.Size(88, 17);
             this.odp1.TabIndex = 7;
-            this.odp1.Text = "checkBox3";
+            this.odp1.Text = "Odpowiedź 1";
             this.odp1.UseVisualStyleBackColor = true;
             // 
             // odp2
@@ -78,9 +78,9 @@
             this.odp2.AutoSize = true;
             this.odp2.Location = new System.Drawing.Point(6, 52);
             this.odp2.Name = "odp2";
-            this.odp2.Size = new System.Drawing.Size(80, 17);
+            this.odp2.Size = new System.Drawing.Size(88, 17);
             this.odp2.TabIndex = 8;
-            this.odp2.Text = "checkBox4";
+            this.odp2.Text = "Odpowiedź 2";
             this.odp2.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -106,7 +106,7 @@
             this.koniec.Name = "koniec";
             this.koniec.Size = new System.Drawing.Size(93, 26);
             this.koniec.TabIndex = 11;
-            this.koniec.Text = "zakończ Quiz";
+            this.koniec.Text = "Zakończ Quiz";
             this.koniec.UseVisualStyleBackColor = true;
             this.koniec.Click += new System.EventHandler(this.koniec_Click);
             // 
