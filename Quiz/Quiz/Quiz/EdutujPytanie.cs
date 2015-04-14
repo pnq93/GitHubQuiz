@@ -12,8 +12,10 @@ namespace Quiz
 {
     public partial class EdutujPytanie : Form
     {
+
         Pytania npyt;
         Pytania pyt1 = new Pytania();
+        
         int pom = 0;
         int pom2;
         Int32 ileOdp = 0;
@@ -69,409 +71,469 @@ namespace Quiz
         }
 
         private void buttonZapisz_Click(object sender, EventArgs e)
-        {        
-            ileOdp = Convert.ToInt32(comboBoxIleOdp.Text) - 1;
-            if(ileOdp == 0)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
+        {
+         
+            
+             if (comboBoxIleOdp.Text == "")
+             {
+
+                 if (pom == 0)
+                 {
+                     if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                     {
+                         MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                     }
+                     else
+                     {
+                         pyt1.tresc = textBoxPytanie.Text;
+                         pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                         pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                         baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                     }
+                 }
+                 else if (pom == 1)
+                 {
+                     npyt = listBoxPytania.SelectedItem as Pytania;
+                     pom2 = npyt.Id;
+                     npyt.tresc = textBoxPytanie.Text;
+                     npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                     npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                     pom = 0;
+                 }
+                 baza.Polaczenie.SubmitChanges();
+                 wczytajPytania();
+                 textBoxPytanie.Text = "";
+                 numericUpDownPoziom.Value = 0;
+                 comboBoxIleOdp.Text = "";
+                 comboBoxKategoria.Text = "";
+                 panel1.Controls.Clear();
+                // this.Close();
+             }
+             else
+             {
+                 ileOdp = Convert.ToInt32(comboBoxIleOdp.Text) - 1;
+
+                 if (ileOdp == 0)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                        // this.Close();
+                     }
+                 }
+                 if (ileOdp == 1)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                       //  this.Close();
+                     }
+                 }
+                 if (ileOdp == 2)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                       //  this.Close();
+                     }
+                 }
+                 if (ileOdp == 3)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                        // this.Close();
+                     }
+                 }
+                 if (ileOdp == 4)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                        // this.Close();
+                     }
+                 }
+                 if (ileOdp == 5)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                         //this.Close();
+                     }
+                 }
+                 if (ileOdp == 6)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                        // this.Close();
+                     }
+                 }
+                 if (ileOdp == 7)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[7].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                       //  this.Close();
+                     }
+                 }
+                 if (ileOdp == 8)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[7].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[8].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                        // this.Close();
+                     }
+                 }
+                 if (ileOdp == 9)
+                 {
+                     if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[7].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[8].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[9].Controls["textBoxOdpowiedz"].Text == "")
+                     {
+                         MessageBox.Show("Pusta odpowiedz");
+                     }
+                     else
+                     {
+                         if (pom == 0)
+                         {
+                             if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
+                             {
+                                 MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
+                             }
+                             else
+                             {
+                                 pyt1.tresc = textBoxPytanie.Text;
+                                 pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                                 pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                                 baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
+
+                             }
+                         }
+                         else if (pom == 1)
+                         {
+                             npyt = listBoxPytania.SelectedItem as Pytania;
+                             pom2 = npyt.Id;
+                             npyt.tresc = textBoxPytanie.Text;
+                             npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
+                             npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
+                             pom = 0;
+                         }
+                         baza.Polaczenie.SubmitChanges();
+                         wczytajPytania();
+                         textBoxPytanie.Text = "";
+                         numericUpDownPoziom.Value = 0;
+                         comboBoxIleOdp.Text = "";
+                         comboBoxKategoria.Text = "";
+                         panel1.Controls.Clear();
+                        // this.Close();
+                     }
+                 }
+             }
+             var Form = new EdutujPytanie();
+             this.Close();
+             Form.Show();
+           
             }
-            if (ileOdp == 1)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 2)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 3)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 4)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 5)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 6)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 7)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[7].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 8)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[7].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[8].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }
-            if (ileOdp == 9)
-            {
-                if (panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[1].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[2].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[3].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[4].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[5].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[6].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[7].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[8].Controls["textBoxOdpowiedz"].Text == "" || panel1.Controls[9].Controls["textBoxOdpowiedz"].Text == "")
-                {
-                    MessageBox.Show("Pusta odpowiedz");
-                }
-                else
-                {
-                    if (pom == 0)
-                    {
-                        if (textBoxPytanie.Text == "" || comboBoxIleOdp.Text == "" || numericUpDownPoziom.Text == "" || comboBoxKategoria.Text == "")
-                        {
-                            MessageBox.Show("Wypełnij każde pole formularza", "Błąd");
-                        }
-                        else
-                        {
-                            pyt1.tresc = textBoxPytanie.Text;
-                            pyt1.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                            pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                            baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
-                        }
-                    }
-                    else if (pom == 1)
-                    {
-                        npyt = listBoxPytania.SelectedItem as Pytania;
-                        pom2 = npyt.Id;
-                        npyt.tresc = textBoxPytanie.Text;
-                        npyt.id_kategoria = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).Select(s => s.Id).First();
-                        npyt.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
-                        pom = 0;
-                    }
-                    baza.Polaczenie.SubmitChanges();
-                    wczytajPytania();
-                    textBoxPytanie.Text = "";
-                    numericUpDownPoziom.Value = 0;
-                    comboBoxIleOdp.Text = "";
-                    comboBoxKategoria.Text = "";
-                    panel1.Controls.Clear();
-                }
-            }         
-        }
+        
+        
 
         private void buttonUsun_Click(object sender, EventArgs e)
         {
@@ -502,6 +564,7 @@ namespace Quiz
 
         private void buttonDodajOdp_Click(object sender, EventArgs e)
         {
+            
             if (pom == 0)
             {
 
@@ -536,6 +599,7 @@ namespace Quiz
                     panel1.Controls.Add(generator);
                     move += 35;
                     npyt.Odpowiedzis.Add(generator.OdpowiedziDane);
+                    
                 }
             }
         }
@@ -552,12 +616,24 @@ namespace Quiz
 
         private void buttonCzysc_Click(object sender, EventArgs e)
         {
+           
             pom = 0;       
             textBoxPytanie.Text = "";
             numericUpDownPoziom.Value = 0;
             comboBoxIleOdp.Text = "";
             comboBoxKategoria.Text = "";
-            panel1.Controls.Clear();    
+           /* if(panel1.Controls[0].Controls["textBoxOdpowiedz"].Text == "" )
+            {
+  foreach (Control item in panel1.Controls.OfType<Control>())
+            {
+                if ( item.Name == "texBoxOdpowiedz")
+                    panel1.Controls.Remove(item);
+            }
+            
+            }*/
+          
+            panel1.Controls.Clear();
+            
         }
 
         private void buttonZapisz_MouseClick(object sender, MouseEventArgs e)

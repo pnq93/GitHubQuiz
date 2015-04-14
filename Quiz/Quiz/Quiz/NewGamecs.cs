@@ -47,7 +47,8 @@ namespace Quiz
 
         private void dalej_Click(object sender, EventArgs e)
         {
-
+            progressBar1.Minimum = 0;
+            progressBar1.Maximum = 5;
             if (odp1.Checked || odp2.Checked || odp3.Checked || odp4.Checked)
             {
                 if(licznik < 5)

@@ -57,7 +57,7 @@ namespace Quiz
     #endregion
 		
 		public bazaDanychQuizDataContext() : 
-				base(global::Quiz.Properties.Settings.Default.bazaDanychQuizConnectionString3, mappingSource)
+				base(global::Quiz.Properties.Settings.Default.bazaDanychQuizConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

@@ -38,6 +38,7 @@
             this.dalej = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.losowanePytanie = new System.Windows.Forms.Label();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -148,11 +149,19 @@
             this.losowanePytanie.TabIndex = 0;
             this.losowanePytanie.Text = "Wyswietlanie losowego pytania";
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(12, 211);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(348, 23);
+            this.progressBar1.TabIndex = 11;
+            // 
             // NewGamecs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(378, 217);
+            this.ClientSize = new System.Drawing.Size(372, 243);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "NewGamecs";
@@ -178,5 +187,6 @@
         private System.Windows.Forms.Label UdzieloneOdp;
         private System.Windows.Forms.Button koniec;
         private System.Windows.Forms.Label losowanePytanie;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

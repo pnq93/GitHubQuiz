@@ -48,21 +48,23 @@ namespace Quiz
         {
             InitializeComponent();
             this.odp = odp;
-           
-               // textBoxOdpowiedz.Text = odp.odp;
 
+            // textBoxOdpowiedz.Text = odp.odp;
+            if (odp.czy_poprawna == 1)
+            {
+                checkBoxCzyPrawda.Checked = true;
+            }
+            else
+            {
+                checkBoxCzyPrawda.Checked = false;
+            }
+           
+            
                 textBoxOdpowiedz.DataBindings.Add(new Binding("Text", odp, "odp"));
                 checkBoxCzyPrawda.DataBindings.Add(new Binding("Checked", odp, "czy_poprawna"));
+           
 
-               if (odp.czy_poprawna == 1)
-                {
-                    checkBoxCzyPrawda.Checked = true;
-                }
-                else
-                {
-                    checkBoxCzyPrawda.Checked = false;
-                }
-                baza.Polaczenie.SubmitChanges();   
+            
         }
 
 
@@ -86,6 +88,7 @@ namespace Quiz
         {
             baza.Polaczenie.Odpowiedzis.DeleteOnSubmit(odp);
             baza.Polaczenie.SubmitChanges();
+            
         }
 
 
