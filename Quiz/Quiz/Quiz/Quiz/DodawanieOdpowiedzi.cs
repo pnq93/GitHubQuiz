@@ -81,6 +81,22 @@ namespace Quiz
                 return false;
             }
         }
+        public Boolean czyZaznaczonaPoprawna()
+        {
+
+            if (checkBoxCzyPrawda.Checked)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+
+            
+           
+        }
         
 
 

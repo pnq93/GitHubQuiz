@@ -141,7 +141,7 @@
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(101, 34);
             this.buttonUsun.TabIndex = 8;
-            this.buttonUsun.Text = "Usuń";
+            this.buttonUsun.Text = "Usuń pytanie";
             this.buttonUsun.UseVisualStyleBackColor = true;
             this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
             // 
@@ -215,11 +215,11 @@
             // 
             // buttonUsunOdp
             // 
-            this.buttonUsunOdp.Location = new System.Drawing.Point(454, 305);
+            this.buttonUsunOdp.Location = new System.Drawing.Point(455, 88);
             this.buttonUsunOdp.Name = "buttonUsunOdp";
-            this.buttonUsunOdp.Size = new System.Drawing.Size(75, 23);
+            this.buttonUsunOdp.Size = new System.Drawing.Size(79, 35);
             this.buttonUsunOdp.TabIndex = 15;
-            this.buttonUsunOdp.Text = "Usun odp";
+            this.buttonUsunOdp.Text = "Usuń odpowiedź";
             this.buttonUsunOdp.UseVisualStyleBackColor = true;
             this.buttonUsunOdp.Click += new System.EventHandler(this.buttonUsunOdp_Click);
             // 

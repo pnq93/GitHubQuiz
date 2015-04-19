@@ -32,6 +32,16 @@ namespace Quiz
             listBoxPytania.Items.AddRange(baza.Polaczenie.Pytanias.OrderBy(o => o.tresc).ToArray());
             listBoxPytania.DisplayMember = "tresc";
         }
+        private int iloscUC()
+        {
+            int ileUC = 0;
+            foreach(DodawanieOdpowiedzi dododp in panel1.Controls)
+            {
+                ileUC += 1;
+            }
+            return ileUC;
+        }
+   
 
         private void EdutujPytanie_Load(object sender, EventArgs e)
         {
@@ -50,6 +60,7 @@ namespace Quiz
             {
                 pom = 1;
                 Pytania pytanie = listBoxPytania.SelectedItem as Pytania;
+                
                 pom2 = pytanie.Id;
                 if (listBoxPytania.SelectedItem == null)
                 {
@@ -71,8 +82,10 @@ namespace Quiz
                         move += 35;
 
                     }
+                    
                 }
             }
+            
         }
 
         private void buttonZapisz_Click(object sender, EventArgs e)
@@ -103,12 +116,35 @@ namespace Quiz
                         pyt1.id_typ = baza.Polaczenie.Typ_pytanias.Where(x => x.poziom == numericUpDownPoziom.Value).Select(s => s.Id).First();
                         baza.Polaczenie.Pytanias.InsertOnSubmit(pyt1);
                     }
-                    baza.Polaczenie.SubmitChanges();
-                    MessageBox.Show("Zapisano", "Informacja");
-                    wczytajPytania();
-                    var Form = new EdutujPytanie();
-                    this.Close();
-                    Form.Show();
+                    bool pop = true;
+                    int pomocnicza = 0;
+                   foreach(DodawanieOdpowiedzi odpp in panel1.Controls)
+                   {
+                       if(odpp.czyZaznaczonaPoprawna()==false)
+                       {
+                           pop = false;
+                           
+                       }
+                       else
+                       {
+                           pomocnicza = 1;
+                       }
+                       
+                   }
+                   if (pop == true || pomocnicza == 1)
+                   {
+                       baza.Polaczenie.SubmitChanges();
+                       MessageBox.Show("Zapisano", "Informacja");
+                       wczytajPytania();
+                       var Form = new EdutujPytanie();
+                       this.Close();
+                       Form.Show();
+                   }
+                   else
+                   {
+                       MessageBox.Show("Przynajmniej jedna odpowiedź musi być poprawna");
+                      
+                   }
                 }
                 else if (pom == 1)
                 {
@@ -129,12 +165,35 @@ namespace Quiz
                     }
                     if (czy1 == true)
                     {
-                        baza.Polaczenie.SubmitChanges();
-                        MessageBox.Show("Zapisano","Informacja");
-                        wczytajPytania();
-                        var Form = new EdutujPytanie();
-                        this.Close();
-                        Form.Show();
+                         bool pop = true;
+                    int pomocnicza = 0;
+                   foreach(DodawanieOdpowiedzi odpp in panel1.Controls)
+                   {
+                       if(odpp.czyZaznaczonaPoprawna()==false)
+                       {
+                           pop = false;
+                           
+                       }
+                       else
+                       {
+                           pomocnicza = 1;
+                       }
+                       
+                   }
+                   if (pop == true || pomocnicza == 1)
+                   {
+                       baza.Polaczenie.SubmitChanges();
+                       MessageBox.Show("Zapisano", "Informacja");
+                       wczytajPytania();
+                       var Form = new EdutujPytanie();
+                       this.Close();
+                       Form.Show();
+                   }
+                   else
+                   {
+                       MessageBox.Show("Przynajmniej jedna odpowiedź musi być poprawna");
+                       pom = 1;
+                   }
                     }
                     else
                     {
@@ -158,6 +217,7 @@ namespace Quiz
         panel1.Controls.Clear();*/
         private void buttonUsun_Click(object sender, EventArgs e)
         {
+          
             if (listBoxPytania.SelectedItem == null)
             {
                 MessageBox.Show("Nic nie zaznaczono", "Błąd usuwania");
@@ -185,10 +245,8 @@ namespace Quiz
 
         private void buttonDodajOdp_Click(object sender, EventArgs e)
         {
-
             if (pom == 0)
             {
-
                 string ile = comboBoxIleOdp.Text;
                 Int32 ileOdpowiedzi = Convert.ToInt32(ile);
                 ileOdp = Convert.ToInt32(ile);
@@ -264,18 +322,27 @@ namespace Quiz
 
             foreach (DodawanieOdpowiedzi uc in panel1.Controls)
             {
-                if (uc.czyZaznaczona() == true)
+                Int32 ile = iloscUC();             
+                if (ile <= 4)
                 {
-                    uc.usunOdpowiedz();
-                    int move = 0;
-                    panel1.Controls.Clear();
-                    Pytania pytanie = listBoxPytania.SelectedItem as Pytania;
-                    foreach (Odpowiedzi odp in pytanie.Odpowiedzis)
+                    MessageBox.Show("Nie można usunąć więcej odpowiedzi", "Informacja");
+                    break;
+                }
+                else
+                {
+                    if (uc.czyZaznaczona() == true)
                     {
-                        DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi(odp);
-                        generator.Location = new Point(5, 10 + move);
-                        panel1.Controls.Add(generator);
-                        move += 35;
+                        uc.usunOdpowiedz();
+                        int move = 0;
+                        panel1.Controls.Clear();
+                        Pytania pytanie = listBoxPytania.SelectedItem as Pytania;
+                        foreach (Odpowiedzi odp in pytanie.Odpowiedzis)
+                        {
+                            DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi(odp);
+                            generator.Location = new Point(5, 10 + move);
+                            panel1.Controls.Add(generator);
+                            move += 35;
+                        }
                     }
                 }
             }
