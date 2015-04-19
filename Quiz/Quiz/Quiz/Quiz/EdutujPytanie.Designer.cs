@@ -44,6 +44,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonUsunOdp = new System.Windows.Forms.Button();
+            this.buttonDodajKat = new System.Windows.Forms.Button();
+            this.buttonEdytujKat = new System.Windows.Forms.Button();
+            this.buttonUsunKat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPoziom)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +62,7 @@
             // 
             this.textBoxPytanie.Location = new System.Drawing.Point(241, 9);
             this.textBoxPytanie.Name = "textBoxPytanie";
-            this.textBoxPytanie.Size = new System.Drawing.Size(304, 20);
+            this.textBoxPytanie.Size = new System.Drawing.Size(393, 20);
             this.textBoxPytanie.TabIndex = 1;
             // 
             // buttonEdytuj
@@ -103,7 +106,7 @@
             "Geografia"});
             this.comboBoxKategoria.Location = new System.Drawing.Point(241, 65);
             this.comboBoxKategoria.Name = "comboBoxKategoria";
-            this.comboBoxKategoria.Size = new System.Drawing.Size(156, 21);
+            this.comboBoxKategoria.Size = new System.Drawing.Size(86, 21);
             this.comboBoxKategoria.TabIndex = 4;
             // 
             // label1
@@ -166,9 +169,9 @@
             // 
             // buttonDodajOdp
             // 
-            this.buttonDodajOdp.Location = new System.Drawing.Point(333, 94);
+            this.buttonDodajOdp.Location = new System.Drawing.Point(327, 94);
             this.buttonDodajOdp.Name = "buttonDodajOdp";
-            this.buttonDodajOdp.Size = new System.Drawing.Size(116, 23);
+            this.buttonDodajOdp.Size = new System.Drawing.Size(107, 23);
             this.buttonDodajOdp.TabIndex = 10;
             this.buttonDodajOdp.Text = "Dodaj odpowiedź";
             this.buttonDodajOdp.UseVisualStyleBackColor = true;
@@ -204,30 +207,65 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
             this.panel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.panel1.Location = new System.Drawing.Point(185, 123);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(360, 166);
+            this.panel1.Size = new System.Drawing.Size(449, 166);
             this.panel1.TabIndex = 14;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonUsunOdp
             // 
-            this.buttonUsunOdp.Location = new System.Drawing.Point(455, 88);
+            this.buttonUsunOdp.Location = new System.Drawing.Point(438, 94);
             this.buttonUsunOdp.Name = "buttonUsunOdp";
-            this.buttonUsunOdp.Size = new System.Drawing.Size(79, 35);
+            this.buttonUsunOdp.Size = new System.Drawing.Size(107, 23);
             this.buttonUsunOdp.TabIndex = 15;
             this.buttonUsunOdp.Text = "Usuń odpowiedź";
             this.buttonUsunOdp.UseVisualStyleBackColor = true;
             this.buttonUsunOdp.Click += new System.EventHandler(this.buttonUsunOdp_Click);
             // 
+            // buttonDodajKat
+            // 
+            this.buttonDodajKat.Location = new System.Drawing.Point(333, 63);
+            this.buttonDodajKat.Name = "buttonDodajKat";
+            this.buttonDodajKat.Size = new System.Drawing.Size(99, 23);
+            this.buttonDodajKat.TabIndex = 16;
+            this.buttonDodajKat.Text = "Dodaj kategorie";
+            this.buttonDodajKat.UseVisualStyleBackColor = true;
+            this.buttonDodajKat.Click += new System.EventHandler(this.buttonDodajKat_Click);
+            // 
+            // buttonEdytujKat
+            // 
+            this.buttonEdytujKat.Location = new System.Drawing.Point(438, 63);
+            this.buttonEdytujKat.Name = "buttonEdytujKat";
+            this.buttonEdytujKat.Size = new System.Drawing.Size(99, 23);
+            this.buttonEdytujKat.TabIndex = 17;
+            this.buttonEdytujKat.Text = "Edytuj kategorie";
+            this.buttonEdytujKat.UseVisualStyleBackColor = true;
+            this.buttonEdytujKat.Click += new System.EventHandler(this.buttonEdytujKat_Click);
+            // 
+            // buttonUsunKat
+            // 
+            this.buttonUsunKat.Location = new System.Drawing.Point(543, 63);
+            this.buttonUsunKat.Name = "buttonUsunKat";
+            this.buttonUsunKat.Size = new System.Drawing.Size(99, 23);
+            this.buttonUsunKat.TabIndex = 18;
+            this.buttonUsunKat.Text = "Usuń kategorie";
+            this.buttonUsunKat.UseVisualStyleBackColor = true;
+            this.buttonUsunKat.Click += new System.EventHandler(this.buttonUsunKat_Click);
+            // 
             // EdutujPytanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(563, 345);
+            this.ClientSize = new System.Drawing.Size(652, 345);
+            this.Controls.Add(this.buttonUsunKat);
+            this.Controls.Add(this.buttonEdytujKat);
+            this.Controls.Add(this.buttonDodajKat);
             this.Controls.Add(this.buttonUsunOdp);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -272,5 +310,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.FlowLayoutPanel panel1;
         private System.Windows.Forms.Button buttonUsunOdp;
+        private System.Windows.Forms.Button buttonDodajKat;
+        private System.Windows.Forms.Button buttonEdytujKat;
+        private System.Windows.Forms.Button buttonUsunKat;
     }
 }

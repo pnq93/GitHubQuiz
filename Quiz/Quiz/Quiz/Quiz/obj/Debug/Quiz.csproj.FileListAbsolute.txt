@@ -422,3 +422,4 @@ E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Game.
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Logowanie.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Properties.Resources.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.csproj.GenerateResource.Cache
+E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.EdytujKategorie.resources

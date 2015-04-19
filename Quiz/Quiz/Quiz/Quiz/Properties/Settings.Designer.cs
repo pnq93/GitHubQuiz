@@ -27,17 +27,6 @@ namespace Quiz.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=E:\\Inżynieria\\Ćwiczenia\\GH\\GitHubQui" +
-            "z\\Quiz\\bazaDanychQuiz.mdf;Integrated Security=True;Connect Timeout=30")]
-        public string bazaDanychQuizConnectionString1 {
-            get {
-                return ((string)(this["bazaDanychQuizConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\v11.0;AttachDbFilename=E:\\Inżynieria\\Ćwiczenia\\GH\\GitHubQui" +
             "z\\Quiz\\Quiz\\bazaDanychQuiz.mdf;Integrated Security=True;Connect Timeout=30")]
         public string bazaDanychQuizConnectionString {
             get {

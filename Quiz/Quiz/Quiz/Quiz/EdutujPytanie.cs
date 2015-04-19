@@ -12,7 +12,7 @@ namespace Quiz
 {
     public partial class EdutujPytanie : Form
     {
-        
+
         Pytania npyt;
         Pytania pyt1 = new Pytania();
         Pytania p;
@@ -20,6 +20,7 @@ namespace Quiz
         int pom = 0;
         int pom2;
         Int32 ileOdp = 0;
+
 
         public EdutujPytanie()
         {
@@ -35,13 +36,13 @@ namespace Quiz
         private int iloscUC()
         {
             int ileUC = 0;
-            foreach(DodawanieOdpowiedzi dododp in panel1.Controls)
+            foreach (DodawanieOdpowiedzi dododp in panel1.Controls)
             {
                 ileUC += 1;
             }
             return ileUC;
         }
-   
+
 
         private void EdutujPytanie_Load(object sender, EventArgs e)
         {
@@ -60,7 +61,7 @@ namespace Quiz
             {
                 pom = 1;
                 Pytania pytanie = listBoxPytania.SelectedItem as Pytania;
-                
+
                 pom2 = pytanie.Id;
                 if (listBoxPytania.SelectedItem == null)
                 {
@@ -82,10 +83,10 @@ namespace Quiz
                         move += 35;
 
                     }
-                    
+
                 }
             }
-            
+
         }
 
         private void buttonZapisz_Click(object sender, EventArgs e)
@@ -118,33 +119,33 @@ namespace Quiz
                     }
                     bool pop = true;
                     int pomocnicza = 0;
-                   foreach(DodawanieOdpowiedzi odpp in panel1.Controls)
-                   {
-                       if(odpp.czyZaznaczonaPoprawna()==false)
-                       {
-                           pop = false;
-                           
-                       }
-                       else
-                       {
-                           pomocnicza = 1;
-                       }
-                       
-                   }
-                   if (pop == true || pomocnicza == 1)
-                   {
-                       baza.Polaczenie.SubmitChanges();
-                       MessageBox.Show("Zapisano", "Informacja");
-                       wczytajPytania();
-                       var Form = new EdutujPytanie();
-                       this.Close();
-                       Form.Show();
-                   }
-                   else
-                   {
-                       MessageBox.Show("Przynajmniej jedna odpowiedź musi być poprawna");
-                      
-                   }
+                    foreach (DodawanieOdpowiedzi odpp in panel1.Controls)
+                    {
+                        if (odpp.czyZaznaczonaPoprawna() == false)
+                        {
+                            pop = false;
+
+                        }
+                        else
+                        {
+                            pomocnicza = 1;
+                        }
+
+                    }
+                    if (pop == true || pomocnicza == 1)
+                    {
+                        baza.Polaczenie.SubmitChanges();
+                        MessageBox.Show("Zapisano", "Informacja");
+                        wczytajPytania();
+                        var Form = new EdutujPytanie();
+                        this.Close();
+                        Form.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Przynajmniej jedna odpowiedź musi być poprawna");
+
+                    }
                 }
                 else if (pom == 1)
                 {
@@ -165,35 +166,35 @@ namespace Quiz
                     }
                     if (czy1 == true)
                     {
-                         bool pop = true;
-                    int pomocnicza = 0;
-                   foreach(DodawanieOdpowiedzi odpp in panel1.Controls)
-                   {
-                       if(odpp.czyZaznaczonaPoprawna()==false)
-                       {
-                           pop = false;
-                           
-                       }
-                       else
-                       {
-                           pomocnicza = 1;
-                       }
-                       
-                   }
-                   if (pop == true || pomocnicza == 1)
-                   {
-                       baza.Polaczenie.SubmitChanges();
-                       MessageBox.Show("Zapisano", "Informacja");
-                       wczytajPytania();
-                       var Form = new EdutujPytanie();
-                       this.Close();
-                       Form.Show();
-                   }
-                   else
-                   {
-                       MessageBox.Show("Przynajmniej jedna odpowiedź musi być poprawna");
-                       pom = 1;
-                   }
+                        bool pop = true;
+                        int pomocnicza = 0;
+                        foreach (DodawanieOdpowiedzi odpp in panel1.Controls)
+                        {
+                            if (odpp.czyZaznaczonaPoprawna() == false)
+                            {
+                                pop = false;
+
+                            }
+                            else
+                            {
+                                pomocnicza = 1;
+                            }
+
+                        }
+                        if (pop == true || pomocnicza == 1)
+                        {
+                            baza.Polaczenie.SubmitChanges();
+                            MessageBox.Show("Zapisano", "Informacja");
+                            wczytajPytania();
+                            var Form = new EdutujPytanie();
+                            this.Close();
+                            Form.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Przynajmniej jedna odpowiedź musi być poprawna");
+                            pom = 1;
+                        }
                     }
                     else
                     {
@@ -217,7 +218,7 @@ namespace Quiz
         panel1.Controls.Clear();*/
         private void buttonUsun_Click(object sender, EventArgs e)
         {
-          
+
             if (listBoxPytania.SelectedItem == null)
             {
                 MessageBox.Show("Nic nie zaznaczono", "Błąd usuwania");
@@ -256,7 +257,7 @@ namespace Quiz
                 {
                     DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
                     generator.Location = new Point(5, 10 + move);
-                    generator.Size = new System.Drawing.Size(generator.Width , 45);
+                    generator.Size = new System.Drawing.Size(generator.Width, 45);
                     panel1.Controls.Add(generator);
                     move += 35;
                     pyt1.Odpowiedzis.Add(generator.OdpowiedziDane);
@@ -273,7 +274,7 @@ namespace Quiz
                 {
                     DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
                     generator.Location = new Point(5, 10 + move);
-                    generator.Size = new System.Drawing.Size(generator.Width , 45);
+                    generator.Size = new System.Drawing.Size(generator.Width, 45);
                     panel1.Controls.Add(generator);
                     move += 35;
                     npyt.Odpowiedzis.Add(generator.OdpowiedziDane);
@@ -322,7 +323,7 @@ namespace Quiz
 
             foreach (DodawanieOdpowiedzi uc in panel1.Controls)
             {
-                Int32 ile = iloscUC();             
+                Int32 ile = iloscUC();
                 if (ile <= 4)
                 {
                     MessageBox.Show("Nie można usunąć więcej odpowiedzi", "Informacja");
@@ -347,6 +348,92 @@ namespace Quiz
                 }
             }
         }
+
+        private void buttonDodajKat_Click(object sender, EventArgs e)
+        {
+            if (comboBoxKategoria.Text != "")
+            {
+                int czyIstnieje = 0;
+                foreach (Kategoria k in baza.Polaczenie.Kategorias)
+                {
+                    if (k.nazwa == comboBoxKategoria.Text)
+                    {
+                        czyIstnieje = 1;
+                    }
+                }
+                if (czyIstnieje == 1)
+                {
+                    MessageBox.Show("Kategoria istnieje", "Błąd");
+                }
+                else
+                {
+                    Kategoria kat = new Kategoria();
+                    kat.nazwa = comboBoxKategoria.Text;
+                    baza.Polaczenie.Kategorias.InsertOnSubmit(kat);
+                    baza.Polaczenie.SubmitChanges();
+                    MessageBox.Show("Kategoria dodana", "Informacja");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nie można dodać pustej kategori", "Informacja");
+            }
+        }
+
+        private void buttonEdytujKat_Click(object sender, EventArgs e)
+        {
+            var Form = new EdytujKategorie(comboBoxKategoria.Text);
+            Form.Show();
+
+        }
+        public bool sprawdzKategorie()
+        {
+
+            //var uzytk = baza.Polaczenie.Uzytkownicies.Where(x => x.user_name == uzytkownik.ToLower() && x.password == h.SzyfrujMD5(haslo));
+            var kats = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text);
+            if (kats.Count() != 0)
+            {
+                return true;
+            }
+            return false;
+
+        }
+        private void buttonUsunKat_Click(object sender, EventArgs e)
+        {
+            if (comboBoxKategoria.Text != "")
+            {
+                int pom = 0;
+                if (sprawdzKategorie())
+                {
+                    Kategoria k = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).First();
+                    int idKat = k.Id;
+                    foreach (Pytania p in baza.Polaczenie.Pytanias)
+                    {
+                        if (idKat == p.id_kategoria)
+                        {
+                            pom = 1;
+                        }
+                    }
+                    if (pom == 1)
+                    {
+                        MessageBox.Show("Nie można usunąć kategori. Kategoria jest przypisana do pytania");
+                    }
+                    else if (pom == 0)
+                    {
+                        var usunKat = baza.Polaczenie.Kategorias.Where(u => u.nazwa == comboBoxKategoria.Text);
+                        baza.Polaczenie.Kategorias.DeleteAllOnSubmit(usunKat);
+                        baza.Polaczenie.SubmitChanges();
+                        MessageBox.Show("Kategoria została usunięta");
+                    }
+                }
+               
+            }
+            else
+            {
+                MessageBox.Show("Nie wybrano żadnej kategori do usunięcia");
+            }
+        }
     }
 }
+
 

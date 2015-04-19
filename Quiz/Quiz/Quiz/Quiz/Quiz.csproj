@@ -107,6 +107,12 @@
     <Compile Include="EdycjaUzytkownika.Designer.cs">
       <DependentUpon>EdycjaUzytkownika.cs</DependentUpon>
     </Compile>
+    <Compile Include="EdytujKategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EdytujKategorie.Designer.cs">
+      <DependentUpon>EdytujKategorie.cs</DependentUpon>
+    </Compile>
     <Compile Include="Game.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -178,6 +184,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EdycjaUzytkownika.resx">
       <DependentUpon>EdycjaUzytkownika.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EdytujKategorie.resx">
+      <DependentUpon>EdytujKategorie.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewGamecs.resx">
       <DependentUpon>NewGamecs.cs</DependentUpon>
