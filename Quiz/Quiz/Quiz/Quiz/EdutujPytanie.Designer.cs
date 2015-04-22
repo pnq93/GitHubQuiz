@@ -95,15 +95,6 @@
             // comboBoxKategoria
             // 
             this.comboBoxKategoria.FormattingEnabled = true;
-            this.comboBoxKategoria.Items.AddRange(new object[] {
-            "Sport",
-            "Matematyka",
-            "Informatyka",
-            "Przyroda",
-            "J.Polski",
-            "Kultura",
-            "Muzyka ",
-            "Geografia"});
             this.comboBoxKategoria.Location = new System.Drawing.Point(241, 65);
             this.comboBoxKategoria.Name = "comboBoxKategoria";
             this.comboBoxKategoria.Size = new System.Drawing.Size(86, 21);
