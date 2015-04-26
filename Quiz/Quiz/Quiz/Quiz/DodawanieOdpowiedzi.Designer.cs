@@ -35,7 +35,7 @@
             // 
             // textBoxOdpowiedz
             // 
-            this.textBoxOdpowiedz.Location = new System.Drawing.Point(105, 11);
+            this.textBoxOdpowiedz.Location = new System.Drawing.Point(105, 1);
             this.textBoxOdpowiedz.Name = "textBoxOdpowiedz";
             this.textBoxOdpowiedz.Size = new System.Drawing.Size(125, 20);
             this.textBoxOdpowiedz.TabIndex = 0;
@@ -44,7 +44,7 @@
             // checkBoxCzyPrawda
             // 
             this.checkBoxCzyPrawda.AutoSize = true;
-            this.checkBoxCzyPrawda.Location = new System.Drawing.Point(3, 13);
+            this.checkBoxCzyPrawda.Location = new System.Drawing.Point(3, 3);
             this.checkBoxCzyPrawda.Name = "checkBoxCzyPrawda";
             this.checkBoxCzyPrawda.Size = new System.Drawing.Size(96, 17);
             this.checkBoxCzyPrawda.TabIndex = 1;
@@ -55,7 +55,7 @@
             // checkBoxUsun
             // 
             this.checkBoxUsun.AutoSize = true;
-            this.checkBoxUsun.Location = new System.Drawing.Point(236, 14);
+            this.checkBoxUsun.Location = new System.Drawing.Point(236, 4);
             this.checkBoxUsun.Name = "checkBoxUsun";
             this.checkBoxUsun.Size = new System.Drawing.Size(15, 14);
             this.checkBoxUsun.TabIndex = 3;
@@ -69,7 +69,7 @@
             this.Controls.Add(this.checkBoxCzyPrawda);
             this.Controls.Add(this.textBoxOdpowiedz);
             this.Name = "DodawanieOdpowiedzi";
-            this.Size = new System.Drawing.Size(254, 44);
+            this.Size = new System.Drawing.Size(254, 24);
             this.Load += new System.EventHandler(this.DodawanieOdpowiedzi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

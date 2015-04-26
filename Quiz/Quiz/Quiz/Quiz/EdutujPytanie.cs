@@ -276,39 +276,46 @@ namespace Quiz
 
         private void buttonDodajOdp_Click(object sender, EventArgs e)
         {
-            if (pom == 0)
+            if (comboBoxIleOdp.Text != "")
             {
-                string ile = comboBoxIleOdp.Text;
-                Int32 ileOdpowiedzi = Convert.ToInt32(ile);
-                ileOdp = Convert.ToInt32(ile);
-                int move = 0;
-                panel1.Controls.Clear();
-                for (Int32 i = 0; i < ileOdpowiedzi; i++)
+                if (pom == 0)
                 {
-                    DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
-                    generator.Location = new Point(5, 10 + move);
-                    generator.Size = new System.Drawing.Size(generator.Width, 45);
-                    panel1.Controls.Add(generator);
-                    move += 35;
-                    pyt1.Odpowiedzis.Add(generator.OdpowiedziDane);
+                    string ile = comboBoxIleOdp.Text;
+                    Int32 ileOdpowiedzi = Convert.ToInt32(ile);
+                    ileOdp = Convert.ToInt32(ile);
+                    int move = 0;
+                    //panel1.Controls.Clear();
+                    for (Int32 i = 0; i < ileOdpowiedzi; i++)
+                    {
+                        DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
+                        generator.Location = new Point(2, move);
+                        generator.Size = new System.Drawing.Size(generator.Width, 45);
+                        panel1.Controls.Add(generator);
+                        move += 5;
+                        pyt1.Odpowiedzis.Add(generator.OdpowiedziDane);
+                    }
+                }
+                else
+                {
+                    npyt = listBoxPytania.SelectedItem as Pytania;
+                    npyt.tresc = textBoxPytanie.Text;
+                    string ile = comboBoxIleOdp.Text;
+                    Int32 ileodp = Convert.ToInt32(ile);
+                    int move = 0;
+                    for (Int32 i = 0; i < ileodp; i++)
+                    {
+                        DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
+                        generator.Location = new Point(2,  move);
+                        generator.Size = new System.Drawing.Size(generator.Width, 45);
+                        panel1.Controls.Add(generator);
+                        move += 5;
+                        npyt.Odpowiedzis.Add(generator.OdpowiedziDane);
+                    }
                 }
             }
             else
             {
-                npyt = listBoxPytania.SelectedItem as Pytania;
-                npyt.tresc = textBoxPytanie.Text;
-                string ile = comboBoxIleOdp.Text;
-                Int32 ileodp = Convert.ToInt32(ile);
-                int move = 0;
-                for (Int32 i = 0; i < ileodp; i++)
-                {
-                    DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
-                    generator.Location = new Point(5, 10 + move);
-                    generator.Size = new System.Drawing.Size(generator.Width, 45);
-                    panel1.Controls.Add(generator);
-                    move += 35;
-                    npyt.Odpowiedzis.Add(generator.OdpowiedziDane);
-                }
+                MessageBox.Show("Nie wybrano ilości dodawanych odpowiedzi");
             }
         }
 
@@ -414,9 +421,10 @@ namespace Quiz
 
         private void buttonEdytujKat_Click(object sender, EventArgs e)
         {
-            Kategoria kat = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).ToArray().First();
             if (comboBoxKategoria.Text != "")
             {
+                Kategoria kat = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).ToArray().First();
+
                 var Form = new EdytujKategorie(kat,comboBoxKategoria.Text);
                 Form.Show();
             }
@@ -464,6 +472,8 @@ namespace Quiz
                         baza.Polaczenie.Kategorias.DeleteAllOnSubmit(usunKat);
                         baza.Polaczenie.SubmitChanges();
                         MessageBox.Show("Kategoria została usunięta");
+                        usunComboBoxKategoria();
+                        wypelnijComboBoxKategoria();
                     }
                 }
                

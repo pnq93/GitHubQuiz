@@ -273,7 +273,7 @@
             this.Controls.Add(this.buttonEdytuj);
             this.Controls.Add(this.textBoxPytanie);
             this.Controls.Add(this.listBoxPytania);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EdutujPytanie";
             this.Text = "EdutujPytanie";
             this.Load += new System.EventHandler(this.EdutujPytanie_Load);

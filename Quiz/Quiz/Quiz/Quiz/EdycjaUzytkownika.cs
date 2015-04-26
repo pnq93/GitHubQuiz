@@ -64,7 +64,6 @@ namespace Quiz
 
                 listBoxUzytkownicy.Refresh();
                 MessageBox.Show("Uzytkownik " + listBoxUzytkownicy.Text + " został usunięty", "Usuwanie");
-                //this.Close();
                 listBoxUzytkownicy.Refresh();
             }
         }

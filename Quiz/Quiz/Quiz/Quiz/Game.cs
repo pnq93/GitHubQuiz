@@ -12,14 +12,17 @@ namespace Quiz
 {
     public partial class Game : Form
     {
-        Gra gra = new Gra();
+       
         Uzytkownicy u = new Uzytkownicy();
+     
         public Game()
         {
             InitializeComponent();
      obrazek.Image = new Bitmap(Image.FromFile("E:/Inżynieria/Quiz/Quiz/Olympic-logo.png"));
             obrazek.SizeMode = PictureBoxSizeMode.StretchImage;
         }
+      
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -34,11 +37,7 @@ namespace Quiz
 
         private void newgame_Click(object sender, EventArgs e)
         {
-
-            gra.data_rozgrywki = DateTime.Now;
-            
-            baza.Polaczenie.Gras.InsertOnSubmit(gra);
-          //  baza.Polaczenie.SubmitChanges();
+          
             var Form = new NewGamecs();
             Form.Show();
 
