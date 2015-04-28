@@ -34,7 +34,6 @@
             this.pass = new System.Windows.Forms.TextBox();
             this.obrazek = new System.Windows.Forms.PictureBox();
             this.login = new System.Windows.Forms.Button();
-            this.uzytkownik = new System.Windows.Forms.Button();
             this.rejestracja = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).BeginInit();
             this.SuspendLayout();
@@ -91,16 +90,6 @@
             this.login.UseVisualStyleBackColor = true;
             this.login.Click += new System.EventHandler(this.login_Click);
             // 
-            // uzytkownik
-            // 
-            this.uzytkownik.Location = new System.Drawing.Point(197, 226);
-            this.uzytkownik.Name = "uzytkownik";
-            this.uzytkownik.Size = new System.Drawing.Size(75, 23);
-            this.uzytkownik.TabIndex = 6;
-            this.uzytkownik.Text = "Ranking";
-            this.uzytkownik.UseVisualStyleBackColor = true;
-            this.uzytkownik.Click += new System.EventHandler(this.uzytkownik_Click);
-            // 
             // rejestracja
             // 
             this.rejestracja.Location = new System.Drawing.Point(12, 226);
@@ -117,7 +106,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.rejestracja);
-            this.Controls.Add(this.uzytkownik);
             this.Controls.Add(this.login);
             this.Controls.Add(this.obrazek);
             this.Controls.Add(this.pass);
@@ -126,6 +114,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Logowanie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logowanie";
             this.Load += new System.EventHandler(this.Logowanie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
@@ -142,7 +131,6 @@
         private System.Windows.Forms.TextBox pass;
         private System.Windows.Forms.PictureBox obrazek;
         private System.Windows.Forms.Button login;
-        private System.Windows.Forms.Button uzytkownik;
         private System.Windows.Forms.Button rejestracja;
     }
 }

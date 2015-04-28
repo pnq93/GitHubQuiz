@@ -432,6 +432,7 @@ namespace Quiz
             {
                 MessageBox.Show("Nie można edytować pustej kategori", "Informacja");
             }
+           
 
         }
         public bool sprawdzKategorie()
@@ -471,17 +472,16 @@ namespace Quiz
                         var usunKat = baza.Polaczenie.Kategorias.Where(u => u.nazwa == comboBoxKategoria.Text);
                         baza.Polaczenie.Kategorias.DeleteAllOnSubmit(usunKat);
                         baza.Polaczenie.SubmitChanges();
-                        MessageBox.Show("Kategoria została usunięta");
-                        usunComboBoxKategoria();
-                        wypelnijComboBoxKategoria();
+                        MessageBox.Show("Kategoria została usunięta");               
                     }
-                }
-               
+                }               
             }
             else
             {
                 MessageBox.Show("Nie wybrano żadnej kategori do usunięcia");
             }
+            usunComboBoxKategoria();
+           // wypelnijComboBoxKategoria();
         }
     }
 }

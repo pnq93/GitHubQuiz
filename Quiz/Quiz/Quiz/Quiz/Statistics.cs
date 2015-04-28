@@ -12,9 +12,26 @@ namespace Quiz
 {
     public partial class Statistics : Form
     {
+        private int wynik;
+        private string uzytkownik;
+
         public Statistics()
         {
             InitializeComponent();
+            
+        }
+
+        public Statistics(int wynik, string uzytkownik)
+        {
+            // TODO: Complete member initialization 
+            InitializeComponent();
+            this.wynik = wynik;
+            this.uzytkownik = uzytkownik;       
+        }
+
+        private void Statistics_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

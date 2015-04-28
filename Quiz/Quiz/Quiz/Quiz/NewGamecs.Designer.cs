@@ -165,7 +165,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.progressBar1.ForeColor = System.Drawing.Color.SlateBlue;
             this.progressBar1.Location = new System.Drawing.Point(12, 211);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(348, 23);
@@ -181,6 +181,7 @@
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "NewGamecs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rozgrywka";
             this.Load += new System.EventHandler(this.NewGamecs_Load);
             this.groupBox1.ResumeLayout(false);

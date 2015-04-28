@@ -275,6 +275,7 @@
             this.Controls.Add(this.listBoxPytania);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EdutujPytanie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EdutujPytanie";
             this.Load += new System.EventHandler(this.EdutujPytanie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPoziom)).EndInit();

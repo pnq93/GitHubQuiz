@@ -72,6 +72,7 @@
             this.Controls.Add(this.edycja);
             this.Controls.Add(this.dodAdmin);
             this.Name = "PanelAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PanelAdmin";
             this.ResumeLayout(false);
 

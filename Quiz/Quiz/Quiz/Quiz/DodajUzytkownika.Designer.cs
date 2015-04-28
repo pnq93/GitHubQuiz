@@ -88,6 +88,7 @@
             this.Controls.Add(this.textBoxHaslo);
             this.Controls.Add(this.textBoxLogin);
             this.Name = "DodajUzytkownika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DodajUzytkownika";
             this.ResumeLayout(false);
             this.PerformLayout();

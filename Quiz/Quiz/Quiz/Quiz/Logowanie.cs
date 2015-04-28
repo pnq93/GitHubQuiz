@@ -11,9 +11,11 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-   
+  
     public partial class Logowanie : Form
     {
+        Udzielona_odpowiedz up = new Udzielona_odpowiedz();
+        private int wynik;
         
         public Logowanie()
         {
@@ -24,6 +26,12 @@ namespace Quiz
             pass.PasswordChar = '*';
          obrazek.Image = new Bitmap(Image.FromFile("E:/Inżynieria/Quiz/Quiz/pobrane.jpg"));
             obrazek.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+
+        public Logowanie(int wynik)
+        {
+            // TODO: Complete member initialization
+            this.wynik = wynik;
         }
 
         private void login_Click(object sender, EventArgs e)
@@ -43,6 +51,7 @@ namespace Quiz
                     
                     g.id_uzytkownika = baza.Polaczenie.Uzytkownicies.Where(x => x.user_name == user.Text).Select(s => s.Id).First();
                     g.data_rozgrywki = DateTime.Now;
+                    
                     if (admin == "1")
                     {
                         MessageBox.Show("Użytkownik jest w systemie jako admin", "Zaalogowano jako admin");
@@ -65,8 +74,9 @@ namespace Quiz
                     MessageBox.Show("Niepoprawna nazwa użytkownika lub hasło", "Błąd logowania");
                     return;
                 }
-            
-               }
+                NewGamecs noweOkno = new NewGamecs(uzytkownik);
+                    }
+               
             
         
         public bool SprawdzNazweiHaslo(string uzytkownik, string haslo)

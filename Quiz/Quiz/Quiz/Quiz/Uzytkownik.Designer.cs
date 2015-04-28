@@ -47,6 +47,7 @@
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.obszar);
             this.Name = "Uzytkownik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uzytkownik";
             this.Load += new System.EventHandler(this.Uzytkownik_Load);
             this.ResumeLayout(false);

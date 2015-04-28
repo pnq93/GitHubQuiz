@@ -68,6 +68,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxKat);
             this.Name = "EdytujKategorie";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EdytujKategorie";
             this.Load += new System.EventHandler(this.EdytujKategorie_Load);
             this.ResumeLayout(false);

@@ -120,6 +120,7 @@
             this.Controls.Add(this.textBoxHaslo);
             this.Controls.Add(this.textBoxUzytkownik);
             this.Name = "Edycja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edycja";
             this.Load += new System.EventHandler(this.Edycja_Load);
             this.ResumeLayout(false);

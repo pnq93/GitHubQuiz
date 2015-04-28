@@ -82,6 +82,7 @@
             this.Controls.Add(this.buttonEdytuj);
             this.Controls.Add(this.listBoxUzytkownicy);
             this.Name = "EdycjaUzytkownika";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EdycjaUzytkownika";
             this.Load += new System.EventHandler(this.EdycjaUzytkownika_Load);
             this.ResumeLayout(false);

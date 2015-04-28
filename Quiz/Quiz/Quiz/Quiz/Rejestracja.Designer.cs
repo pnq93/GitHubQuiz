@@ -88,6 +88,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Użytkownik);
             this.Name = "Rejestracja";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rejestracja";
             this.Load += new System.EventHandler(this.Rejestracja_Load);
             this.ResumeLayout(false);

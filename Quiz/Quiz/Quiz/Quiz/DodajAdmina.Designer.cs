@@ -88,6 +88,7 @@
             this.Controls.Add(this.DodajAdminB);
             this.Controls.Add(this.loginAdminTB);
             this.Name = "DodajAdmina";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DodajAdmina";
             this.Load += new System.EventHandler(this.DodajAdmina_Load);
             this.ResumeLayout(false);

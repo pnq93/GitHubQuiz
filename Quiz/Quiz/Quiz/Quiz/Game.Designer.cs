@@ -85,6 +85,7 @@
             this.Controls.Add(this.obrazek);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Game";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Gry";
             this.Load += new System.EventHandler(this.Game_Load);
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
