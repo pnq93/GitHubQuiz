@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,17 +10,28 @@ using System.Windows.Forms;
 
 namespace Quiz
 {
-    public partial class Rejestracja : Form
+    public partial class RejestracjaUC : UserControl
     {
-
-
         Haszowanie hash = new Haszowanie();
         private Uzytkownicy osoba;
-        public Rejestracja()
+        private Logowanie logowanie;
+    
+        public RejestracjaUC()
         {
             InitializeComponent();
             noweHaslo.PasswordChar = '*';
         }
+
+        public RejestracjaUC(Logowanie logowanie)
+        {
+            InitializeComponent();
+            // TODO: Complete member initialization
+            this.logowanie = logowanie;
+        }
+
+
+   
+
 
         private void dodaj_Click(object sender, EventArgs e)
         {
@@ -50,23 +61,12 @@ namespace Quiz
                     osoba.czy_admin = 0;
                     baza.Polaczenie.Uzytkownicies.InsertOnSubmit(osoba);
                     baza.Polaczenie.SubmitChanges();
-                    Close();
+                    MessageBox.Show("Dodano użytkownika");
+                    
+                    
+                   
                 }
             }
         }
-
-
-        private void Rejestracja_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void adminCB_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
-
-
-

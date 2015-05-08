@@ -12,13 +12,14 @@ namespace Quiz
 {
     public partial class NewGamecs : Form
     {
+        int ileNiePoprawnych = 0;
         int ktorePyt = 0;
         int idUzyt;
         int id_zadPyt;
         int idOdp1, idOdp2, idOdp3, idOdp4;
         int iidOdp1, iidOdp2, iidOdp3, iidOdp4;
         int id_gry;
-        int poziomPytania,wynik;
+        int poziomPytania, wynik;
         Table stat = new Table();
         int pom = 0;
         Int32 licznik = 1;
@@ -29,12 +30,12 @@ namespace Quiz
         string poprawnaOdp;
         private string uzytkownik;
         private int p;
-       
+
         public NewGamecs()
         {
             InitializeComponent();
-            
-           
+
+
             foreach (Pytania p in baza.Polaczenie.Pytanias)
             {
                 idpyt.Add(p.Id);
@@ -45,7 +46,7 @@ namespace Quiz
             Pytania pp = baza.Polaczenie.Pytanias.Where(v => v.Id == idpyt[x]).First();
             string pytanie = baza.Polaczenie.Pytanias.Where(w => w.Id == idpyt[x]).Select(s => s.tresc).First();
             poziomPytania = baza.Polaczenie.Typ_pytanias.Where(u => u.Id == pp.id_typ).Select(c => c.poziom).First();
-            
+
             losowanePytanie.Text = pytanie;
             odp1.Text = baza.Polaczenie.Odpowiedzis.Where(t => t.id_pytania == idpyt[x]).Select(s => s.odp).First();
             idOdp1 = baza.Polaczenie.Odpowiedzis.Where(e => e.id_pytania == idpyt[x] && e.odp == odp1.Text).Select(r => r.Id).First();
@@ -55,7 +56,7 @@ namespace Quiz
             idOdp3 = baza.Polaczenie.Odpowiedzis.Where(e => e.id_pytania == idpyt[x] && e.odp == odp3.Text).Select(r => r.Id).First();
             odp4.Text = baza.Polaczenie.Odpowiedzis.Where(w => w.id_pytania == idpyt[x] && w.odp != odp1.Text && w.odp != odp2.Text && w.odp != odp3.Text).Select(c => c.odp).First();
             idOdp4 = baza.Polaczenie.Odpowiedzis.Where(e => e.id_pytania == idpyt[x] && e.odp == odp4.Text).Select(r => r.Id).First();
-           
+
             foreach (Odpowiedzi oo in pp.Odpowiedzis)
             {
                 if (oo.czy_poprawna == 1)
@@ -74,9 +75,9 @@ namespace Quiz
             baza.Polaczenie.Zadane_Pytanias.InsertOnSubmit(zp);
             baza.Polaczenie.SubmitChanges();
             idpyt.RemoveAt(x);
-            labelIlePyt.Text = ktorePyt+"/5";
-            
-           
+            labelIlePyt.Text = ktorePyt + "/5";
+
+
         }
 
         public NewGamecs(string uzytkownik)
@@ -89,15 +90,15 @@ namespace Quiz
         {
             // TODO: Complete member initialization
             this.p = p;
-stat.id_uzytkownika = p;
-idUzyt = p;
-          
+            stat.id_uzytkownika = p;
+            idUzyt = p;
+
             baza.Polaczenie.Tables.InsertOnSubmit(stat);
-          
-  baza.Polaczenie.SubmitChanges();
-            
+
+            baza.Polaczenie.SubmitChanges();
+
         }
-        
+
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -105,24 +106,24 @@ idUzyt = p;
 
         private void NewGamecs_Load(object sender, EventArgs e)
         {
-          /*  Gra g = new Gra();
-            Zadane_Pytania zp = new Zadane_Pytania();
-            g.Zadane_Pytanias.Add(zp);
-            baza.Polaczenie.Gras.InsertOnSubmit(g);
-            baza.Polaczenie.SubmitChanges();*/
+            /*  Gra g = new Gra();
+              Zadane_Pytania zp = new Zadane_Pytania();
+              g.Zadane_Pytanias.Add(zp);
+              baza.Polaczenie.Gras.InsertOnSubmit(g);
+              baza.Polaczenie.SubmitChanges();*/
         }
 
         private void dalej_Click(object sender, EventArgs e)
         {
-            
-            
+
+
             //progressBar1.Minimum = 0;
-          //  progressBar1.Maximum = 4;
-           // progressBar1.ForeColor = Color.Red;
-           // progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            //  progressBar1.Maximum = 4;
+            // progressBar1.ForeColor = Color.Red;
+            // progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             if (odp1.Checked || odp2.Checked || odp3.Checked || odp4.Checked)
             {
-                
+
                 if (pom == 0)
                 {
                     Udzielona_odpowiedz ud = new Udzielona_odpowiedz();
@@ -131,28 +132,30 @@ idUzyt = p;
                         ud.id_odpowiedzi = idOdp1;
                         if (odp1.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //  MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            // MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
 
-                        }                       
+                        }
                     }
                     if (odp2.Checked == true)
                     {
                         ud.id_odpowiedzi = idOdp2;
                         if (odp2.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //  MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
 
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //  MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
 
                         }
@@ -163,13 +166,14 @@ idUzyt = p;
                         ud.id_odpowiedzi = idOdp3;
                         if (odp3.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
 
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //  MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
 
                         }
@@ -180,45 +184,47 @@ idUzyt = p;
                         ud.id_odpowiedzi = idOdp4;
                         if (odp4.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
 
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //   MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
 
                         }
                     }
-                  
-                   
-                    foreach(Zadane_Pytania zp in baza.Polaczenie.Zadane_Pytanias)
+
+
+                    foreach (Zadane_Pytania zp in baza.Polaczenie.Zadane_Pytanias)
                     {
                         id_zadPyt = zp.Id;
                     }
                     pom += 1;
                     ud.id_zadane_pytanie = id_zadPyt;
                     baza.Polaczenie.Udzielona_odpowiedzs.InsertOnSubmit(ud);
-                    
+
                     baza.Polaczenie.SubmitChanges();
 
                 }
                 else if (pom == 1)
                 {
-                   
+
                     Udzielona_odpowiedz ud = new Udzielona_odpowiedz();
                     if (odp1.Checked == true)
                     {
                         ud.id_odpowiedzi = iidOdp1;
                         if (odp1.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //   MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
                     }
@@ -227,12 +233,13 @@ idUzyt = p;
                         ud.id_odpowiedzi = iidOdp2;
                         if (odp2.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //  MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
                     }
@@ -241,12 +248,13 @@ idUzyt = p;
                         ud.id_odpowiedzi = iidOdp3;
                         if (odp3.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            // MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //   MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
                     }
@@ -255,12 +263,13 @@ idUzyt = p;
                         ud.id_odpowiedzi = iidOdp4;
                         if (odp4.Text == poprawnaOdp)
                         {
-                            MessageBox.Show("Poprawna");
+                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            MessageBox.Show("Nie poprawna");
+                            //MessageBox.Show("Nie poprawna");
+                            ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
                     }
@@ -325,51 +334,52 @@ idUzyt = p;
                         zp.id_pytania = baza.Polaczenie.Pytanias.Where(v => v.Id == idpyt[z]).Select(s => s.Id).First();
                         zp.id_gra = id_gry;
                         //zp.Pytania = baza.Polaczenie.Pytanias.Single(p => p.Id == 49);
-                       // MessageBox.Show("zd " + zp.id_pytania + " idgry " + id_gry);
+                        // MessageBox.Show("zd " + zp.id_pytania + " idgry " + id_gry);
                         baza.Polaczenie.Zadane_Pytanias.InsertOnSubmit(zp);
-                        baza.Polaczenie.SubmitChanges(); 
+                        baza.Polaczenie.SubmitChanges();
 
-                        
+
                         idpyt.RemoveAt(z);
                     }
                 }
                 else
                 {
-                    for (int i = 0; i < 5;i++ )
+                    for (int i = 0; i < 5; i++)
                     {
                         wynik += iloscPunktow[i];
                     }
-                 
-                        MessageBox.Show("Koniec rozgrywki");
-                        Logowanie noweOkno = new Logowanie(wynik);
-                        Statistics noweOknp = new Statistics(wynik, uzytkownik);
-                      
-                        //stat.id_uzytkownika = idUzyt;
-                        stat.wynik = wynik;
-                        MessageBox.Show("Wynik: " + stat.wynik + " pkt.", "Podsumowanie");
-                   // foreach(Table t in baza.Polaczenie.Tables.Where(t=>t.id_uzytkownika==idUzyt))
-                   // {
-                    //    t.wynik = wynik;
-                   //     
-                  //  }
 
-                      
-                     
-                      // baza.Polaczenie.Tables.InsertOnSubmit(stat);
-                       
-                   //   baza.Polaczenie.SubmitChanges();
-                      
-                      
+                    MessageBox.Show("Koniec rozgrywki");
+                    Logowanie noweOkno = new Logowanie(wynik);
+                    Statistics noweOknp = new Statistics(wynik, uzytkownik);
+
+                    //stat.id_uzytkownika = idUzyt;
+                    stat.wynik = wynik;
+                    MessageBox.Show("Wynik: " + stat.wynik + " pkt." + "\n " + "Niepoprawne odpowiedzi: " + ileNiePoprawnych, "Podsumowanie");
+
+                    // foreach(Table t in baza.Polaczenie.Tables.Where(t=>t.id_uzytkownika==idUzyt))
+                    // {
+                    //    t.wynik = wynik;
+                    //     
+                    //  }
+
+
+
+                    // baza.Polaczenie.Tables.InsertOnSubmit(stat);
+
+                    //   baza.Polaczenie.SubmitChanges();
+
+
                     this.Close();
-                  
+
                 }
             }
             else
             {
                 MessageBox.Show("Nie zaznaczyłeś żadnej odp");
             }
-          
-            
+
+
         }
         private void label1_Click(object sender, EventArgs e)
         {

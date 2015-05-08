@@ -12,20 +12,18 @@ namespace Quiz
 {
     public partial class EditUzyt : UserControl
     {
-        private Uzytkownicy uzy;
         private PanelAdmin panelAdmin;
         
         public EditUzyt()
         {
             InitializeComponent();
-   
         }
 
         public EditUzyt(PanelAdmin panelAdmin)
         {
             InitializeComponent();
             // TODO: Complete member initialization
-            this.panelAdmin = panelAdmin;
+           
             this.panelAdmin = panelAdmin;
             listBoxuzytkownicy.Items.Clear();
             listBoxuzytkownicy.Items.AddRange(baza.Polaczenie.Uzytkownicies.OrderBy(o => o.user_name).ToArray());
@@ -45,10 +43,6 @@ namespace Quiz
             EdycjaUzy eu = new EdycjaUzy(this, baza.Polaczenie, listBoxuzytkownicy.SelectedItem as Uzytkownicy);
             panelAdmin.panel1.Controls.Add(eu);
 
-        }
-        public Uzytkownicy InfoUzytkownik
-        {
-            get { return uzy; }
         }
         private void EditUzyt_Load(object sender, EventArgs e)
         {

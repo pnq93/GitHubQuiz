@@ -42,7 +42,6 @@
             this.obrazek.Size = new System.Drawing.Size(260, 104);
             this.obrazek.TabIndex = 0;
             this.obrazek.TabStop = false;
-            this.obrazek.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // newgame
             // 
@@ -72,7 +71,6 @@
             this.quit.TabIndex = 3;
             this.quit.Text = "Wyjście";
             this.quit.UseVisualStyleBackColor = true;
-            this.quit.Click += new System.EventHandler(this.quit_Click);
             // 
             // Game
             // 
@@ -87,7 +85,6 @@
             this.Name = "Game";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel Gry";
-            this.Load += new System.EventHandler(this.Game_Load);
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
             this.ResumeLayout(false);
 

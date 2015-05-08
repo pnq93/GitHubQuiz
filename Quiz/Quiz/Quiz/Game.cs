@@ -18,15 +18,8 @@ namespace Quiz
         public Game()
         {
             InitializeComponent();
-     obrazek.Image = new Bitmap(Image.FromFile("E:/Inżynieria/Quiz/Quiz/Olympic-logo.png"));
+    // obrazek.Image = new Bitmap(Image.FromFile("E:/Inżynieria/Quiz/Quiz/Olympic-logo.png"));
             obrazek.SizeMode = PictureBoxSizeMode.StretchImage;
-        }
-      
-
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void statistics_Click(object sender, EventArgs e)
@@ -43,14 +36,5 @@ namespace Quiz
 
         }
 
-        private void quit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Game_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

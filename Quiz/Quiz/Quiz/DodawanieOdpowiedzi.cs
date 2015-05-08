@@ -56,7 +56,7 @@ namespace Quiz
 
         public void usunOdpowiedz()
         {
-                MessageBox.Show("usuwam");
+                MessageBox.Show("Usunięto");
                 baza.Polaczenie.Odpowiedzis.DeleteOnSubmit(odp);
                 baza.Polaczenie.SubmitChanges();
                 this.Parent.Controls.Remove(this);
@@ -70,7 +70,7 @@ namespace Quiz
             }
             else
             {
-                MessageBox.Show("nie moge usunac juz :(");
+                MessageBox.Show("Nie można usunąć wiecej odpowiedzi");
             }
         }
         
