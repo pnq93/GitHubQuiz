@@ -56,6 +56,11 @@ namespace Quiz
 
         }
 
+        private void Logowanie_Load(object sender, EventArgs e)
+        {
+
+        }
+
         
     }
 }

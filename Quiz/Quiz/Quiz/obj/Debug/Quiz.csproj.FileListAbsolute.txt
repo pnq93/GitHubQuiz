@@ -526,3 +526,4 @@ C:\Users\Kamil\Downloads\lupa\Quiz\Quiz\Quiz\obj\Debug\Quiz.Game.resources
 C:\Users\Kamil\Downloads\lupa\Quiz\Quiz\Quiz\obj\Debug\Quiz.Logowanie.resources
 C:\Users\Kamil\Downloads\lupa\Quiz\Quiz\Quiz\obj\Debug\Quiz.Properties.Resources.resources
 C:\Users\Kamil\Downloads\lupa\Quiz\Quiz\Quiz\obj\Debug\Quiz.csproj.GenerateResource.Cache
+E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Statystyka.resources

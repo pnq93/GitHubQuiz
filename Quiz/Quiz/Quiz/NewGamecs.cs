@@ -12,6 +12,7 @@ namespace Quiz
 {
     public partial class NewGamecs : Form
     {
+        int idU;
         int ileNiePoprawnych = 0;
         int ktorePyt = 0;
         int idUzyt;
@@ -34,7 +35,6 @@ namespace Quiz
         public NewGamecs()
         {
             InitializeComponent();
-
 
             foreach (Pytania p in baza.Polaczenie.Pytanias)
             {
@@ -76,8 +76,6 @@ namespace Quiz
             baza.Polaczenie.SubmitChanges();
             idpyt.RemoveAt(x);
             labelIlePyt.Text = ktorePyt + "/5";
-
-
         }
 
         public NewGamecs(string uzytkownik)
@@ -90,12 +88,8 @@ namespace Quiz
         {
             // TODO: Complete member initialization
             this.p = p;
-            stat.id_uzytkownika = p;
             idUzyt = p;
 
-            baza.Polaczenie.Tables.InsertOnSubmit(stat);
-
-            baza.Polaczenie.SubmitChanges();
 
         }
 
@@ -111,6 +105,10 @@ namespace Quiz
               g.Zadane_Pytanias.Add(zp);
               baza.Polaczenie.Gras.InsertOnSubmit(g);
               baza.Polaczenie.SubmitChanges();*/
+
+
+
+
         }
 
         private void dalej_Click(object sender, EventArgs e)
@@ -123,7 +121,6 @@ namespace Quiz
             // progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             if (odp1.Checked || odp2.Checked || odp3.Checked || odp4.Checked)
             {
-
                 if (pom == 0)
                 {
                     Udzielona_odpowiedz ud = new Udzielona_odpowiedz();
@@ -320,7 +317,6 @@ namespace Quiz
 
                             }
                         }
-
                         losowanePytanie.Text = pytanie1;
                         odp1.Text = baza.Polaczenie.Odpowiedzis.Where(x => x.id_pytania == idpyt[z]).Select(s => s.odp).First();
                         iidOdp1 = baza.Polaczenie.Odpowiedzis.Where(y => y.id_pytania == idpyt[z] && y.odp == odp1.Text).Select(r => r.Id).First();
@@ -349,29 +345,34 @@ namespace Quiz
                         wynik += iloscPunktow[i];
                     }
 
-                    MessageBox.Show("Koniec rozgrywki");
+
                     Logowanie noweOkno = new Logowanie(wynik);
                     Statistics noweOknp = new Statistics(wynik, uzytkownik);
 
-                    //stat.id_uzytkownika = idUzyt;
+
+                    MessageBox.Show("Wynik: " + wynik + " pkt." + "\n " + "Niepoprawne odpowiedzi: " + ileNiePoprawnych, "Koniec rozgrywki");
+
+                    /*   Gra g = new Gra();
+               Zadane_Pytania zp = new Zadane_Pytania();
+               g.Zadane_Pytanias.Add(zp);
+               baza.Polaczenie.Gras.InsertOnSubmit(g);
+               baza.Polaczenie.SubmitChanges();*/
+
+                    foreach (Gra gg in baza.Polaczenie.Gras)
+                    {
+                        idU = gg.id_uzytkownika;
+                    }
+                    stat.id_uzytkownika = idU;
                     stat.wynik = wynik;
-                    MessageBox.Show("Wynik: " + stat.wynik + " pkt." + "\n " + "Niepoprawne odpowiedzi: " + ileNiePoprawnych, "Podsumowanie");
 
-                    // foreach(Table t in baza.Polaczenie.Tables.Where(t=>t.id_uzytkownika==idUzyt))
-                    // {
-                    //    t.wynik = wynik;
-                    //     
-                    //  }
-
-
-
-                    // baza.Polaczenie.Tables.InsertOnSubmit(stat);
-
-                    //   baza.Polaczenie.SubmitChanges();
-
+                    baza.Polaczenie.Tables.InsertOnSubmit(stat);
+                    foreach (Udzielona_odpowiedz u in baza.Polaczenie.Udzielona_odpowiedzs)
+                    {
+                        baza.Polaczenie.Udzielona_odpowiedzs.DeleteOnSubmit(u);
+                    }
+                    baza.Polaczenie.SubmitChanges();
 
                     this.Close();
-
                 }
             }
             else

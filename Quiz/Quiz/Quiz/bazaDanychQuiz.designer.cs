@@ -349,9 +349,9 @@ namespace Quiz
 		
 		private int _Id;
 		
-		private int _id_gra;
+		private System.Nullable<int> _id_gra;
 		
-		private int _id_pytania;
+		private System.Nullable<int> _id_pytania;
 		
 		private EntitySet<Udzielona_odpowiedz> _Udzielona_odpowiedzs;
 		
@@ -365,9 +365,9 @@ namespace Quiz
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void Onid_graChanging(int value);
+    partial void Onid_graChanging(System.Nullable<int> value);
     partial void Onid_graChanged();
-    partial void Onid_pytaniaChanging(int value);
+    partial void Onid_pytaniaChanging(System.Nullable<int> value);
     partial void Onid_pytaniaChanged();
     #endregion
 		
@@ -399,8 +399,8 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_gra", DbType="Int NOT NULL")]
-		public int id_gra
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_gra", DbType="Int")]
+		public System.Nullable<int> id_gra
 		{
 			get
 			{
@@ -423,8 +423,8 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pytania", DbType="Int NOT NULL")]
-		public int id_pytania
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_pytania", DbType="Int")]
+		public System.Nullable<int> id_pytania
 		{
 			get
 			{
@@ -487,7 +487,7 @@ namespace Quiz
 					}
 					else
 					{
-						this._id_gra = default(int);
+						this._id_gra = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Gra");
 				}
@@ -521,7 +521,7 @@ namespace Quiz
 					}
 					else
 					{
-						this._id_pytania = default(int);
+						this._id_pytania = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Pytania");
 				}
@@ -1423,13 +1423,13 @@ namespace Quiz
 		
 		private int _Id;
 		
-		private int _id_odpowiedzi;
+		private System.Nullable<int> _id_odpowiedzi;
 		
-		private int _id_zadane_pytanie;
-		
-		private EntityRef<Odpowiedzi> _Odpowiedzi;
+		private System.Nullable<int> _id_zadane_pytanie;
 		
 		private EntityRef<Zadane_Pytania> _Zadane_Pytania;
+		
+		private EntityRef<Odpowiedzi> _Odpowiedzi;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1437,16 +1437,16 @@ namespace Quiz
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
-    partial void Onid_odpowiedziChanging(int value);
+    partial void Onid_odpowiedziChanging(System.Nullable<int> value);
     partial void Onid_odpowiedziChanged();
-    partial void Onid_zadane_pytanieChanging(int value);
+    partial void Onid_zadane_pytanieChanging(System.Nullable<int> value);
     partial void Onid_zadane_pytanieChanged();
     #endregion
 		
 		public Udzielona_odpowiedz()
 		{
-			this._Odpowiedzi = default(EntityRef<Odpowiedzi>);
 			this._Zadane_Pytania = default(EntityRef<Zadane_Pytania>);
+			this._Odpowiedzi = default(EntityRef<Odpowiedzi>);
 			OnCreated();
 		}
 		
@@ -1470,8 +1470,8 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_odpowiedzi", DbType="Int NOT NULL")]
-		public int id_odpowiedzi
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_odpowiedzi", DbType="Int")]
+		public System.Nullable<int> id_odpowiedzi
 		{
 			get
 			{
@@ -1494,8 +1494,8 @@ namespace Quiz
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_zadane_pytanie", DbType="Int NOT NULL")]
-		public int id_zadane_pytanie
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id_zadane_pytanie", DbType="Int")]
+		public System.Nullable<int> id_zadane_pytanie
 		{
 			get
 			{
@@ -1514,40 +1514,6 @@ namespace Quiz
 					this._id_zadane_pytanie = value;
 					this.SendPropertyChanged("id_zadane_pytanie");
 					this.Onid_zadane_pytanieChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Odpowiedzi_Udzielona_odpowiedz", Storage="_Odpowiedzi", ThisKey="id_odpowiedzi", OtherKey="Id", IsForeignKey=true)]
-		public Odpowiedzi Odpowiedzi
-		{
-			get
-			{
-				return this._Odpowiedzi.Entity;
-			}
-			set
-			{
-				Odpowiedzi previousValue = this._Odpowiedzi.Entity;
-				if (((previousValue != value) 
-							|| (this._Odpowiedzi.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Odpowiedzi.Entity = null;
-						previousValue.Udzielona_odpowiedzs.Remove(this);
-					}
-					this._Odpowiedzi.Entity = value;
-					if ((value != null))
-					{
-						value.Udzielona_odpowiedzs.Add(this);
-						this._id_odpowiedzi = value.Id;
-					}
-					else
-					{
-						this._id_odpowiedzi = default(int);
-					}
-					this.SendPropertyChanged("Odpowiedzi");
 				}
 			}
 		}
@@ -1579,9 +1545,43 @@ namespace Quiz
 					}
 					else
 					{
-						this._id_zadane_pytanie = default(int);
+						this._id_zadane_pytanie = default(Nullable<int>);
 					}
 					this.SendPropertyChanged("Zadane_Pytania");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Odpowiedzi_Udzielona_odpowiedz", Storage="_Odpowiedzi", ThisKey="id_odpowiedzi", OtherKey="Id", IsForeignKey=true)]
+		public Odpowiedzi Odpowiedzi
+		{
+			get
+			{
+				return this._Odpowiedzi.Entity;
+			}
+			set
+			{
+				Odpowiedzi previousValue = this._Odpowiedzi.Entity;
+				if (((previousValue != value) 
+							|| (this._Odpowiedzi.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Odpowiedzi.Entity = null;
+						previousValue.Udzielona_odpowiedzs.Remove(this);
+					}
+					this._Odpowiedzi.Entity = value;
+					if ((value != null))
+					{
+						value.Udzielona_odpowiedzs.Add(this);
+						this._id_odpowiedzi = value.Id;
+					}
+					else
+					{
+						this._id_odpowiedzi = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Odpowiedzi");
 				}
 			}
 		}

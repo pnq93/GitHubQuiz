@@ -81,9 +81,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(104, 0);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(98, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 11;
             this.label1.Text = "Rejestracja";
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.Użytkownik);
             this.Name = "RejestracjaUC";
             this.Size = new System.Drawing.Size(206, 107);
+            this.Load += new System.EventHandler(this.RejestracjaUC_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

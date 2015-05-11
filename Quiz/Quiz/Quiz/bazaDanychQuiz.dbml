@@ -12,8 +12,8 @@
   <Table Name="dbo.Zadane_Pytania" Member="Zadane_Pytanias">
     <Type Name="Zadane_Pytania">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_gra" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_pytania" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_gra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_pytania" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Zadane_Pytania_Udzielona_odpowiedz" Member="Udzielona_odpowiedzs" ThisKey="Id" OtherKey="id_zadane_pytanie" Type="Udzielona_odpowiedz" />
       <Association Name="Gra_Zadane_Pytania" Member="Gra" ThisKey="id_gra" OtherKey="Id" Type="Gra" IsForeignKey="true" />
       <Association Name="Pytania_Zadane_Pytania" Member="Pytania" ThisKey="id_pytania" OtherKey="Id" Type="Pytania" IsForeignKey="true" />
@@ -66,10 +66,10 @@
   <Table Name="dbo.Udzielona_odpowiedz" Member="Udzielona_odpowiedzs">
     <Type Name="Udzielona_odpowiedz">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_odpowiedzi" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="id_zadane_pytanie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="Odpowiedzi_Udzielona_odpowiedz" Member="Odpowiedzi" ThisKey="id_odpowiedzi" OtherKey="Id" Type="Odpowiedzi" IsForeignKey="true" />
+      <Column Name="id_odpowiedzi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_zadane_pytanie" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="Zadane_Pytania_Udzielona_odpowiedz" Member="Zadane_Pytania" ThisKey="id_zadane_pytanie" OtherKey="Id" Type="Zadane_Pytania" IsForeignKey="true" />
+      <Association Name="Odpowiedzi_Udzielona_odpowiedz" Member="Odpowiedzi" ThisKey="id_odpowiedzi" OtherKey="Id" Type="Odpowiedzi" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Uzytkownicy" Member="Uzytkownicies">

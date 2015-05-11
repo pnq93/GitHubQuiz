@@ -40,7 +40,7 @@
             // 
             this.login.Location = new System.Drawing.Point(86, 67);
             this.login.Name = "login";
-            this.login.Size = new System.Drawing.Size(100, 28);
+            this.login.Size = new System.Drawing.Size(100, 25);
             this.login.TabIndex = 13;
             this.login.Text = "Zaloguj!";
             this.login.UseVisualStyleBackColor = true;
@@ -81,9 +81,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(98, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(68, 13);
             this.label3.TabIndex = 15;
             this.label3.Text = "Logowanie";
             // 
@@ -99,6 +100,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Logowaniee";
             this.Size = new System.Drawing.Size(192, 102);
+            this.Load += new System.EventHandler(this.Logowaniee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

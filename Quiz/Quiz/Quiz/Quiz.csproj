@@ -158,6 +158,12 @@
     <Compile Include="Statistics.Designer.cs">
       <DependentUpon>Statistics.cs</DependentUpon>
     </Compile>
+    <Compile Include="Statystyka.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Statystyka.Designer.cs">
+      <DependentUpon>Statystyka.cs</DependentUpon>
+    </Compile>
     <Compile Include="Uzytkownik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics.resx">
       <DependentUpon>Statistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Statystyka.resx">
+      <DependentUpon>Statystyka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Uzytkownik.resx">
       <DependentUpon>Uzytkownik.cs</DependentUpon>

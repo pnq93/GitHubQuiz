@@ -84,6 +84,12 @@ namespace Quiz
             EdutujPytanie fe = new EdutujPytanie();
             fe.Show();
         }
+
+        private void wylogujToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            (new Logowanie()).Show();  
+        }
     }
 }
     

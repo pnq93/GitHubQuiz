@@ -73,6 +73,7 @@
             this.Name = "Logowanie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logowanie";
+            this.Load += new System.EventHandler(this.Logowanie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.obrazek)).EndInit();
             this.ResumeLayout(false);
 

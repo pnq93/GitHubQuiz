@@ -251,14 +251,28 @@ namespace Quiz
 
                 baza.Polaczenie.Pytanias.DeleteAllOnSubmit(usunPyt);
 
+            
                 foreach (Odpowiedzi o in baza.Polaczenie.Odpowiedzis)
                 {
                     if (id == o.id_pytania)
-                        baza.Polaczenie.Odpowiedzis.DeleteOnSubmit(o);
+                    {
+ baza.Polaczenie.Odpowiedzis.DeleteOnSubmit(o);
+ 
+                    }
+                       
+                    
                 }
 
+                foreach (Zadane_Pytania z in baza.Polaczenie.Zadane_Pytanias)
+                {
+                    if (id == z.id_pytania)
+                    {
+                        baza.Polaczenie.Zadane_Pytanias.DeleteOnSubmit(z);
+                       
+                    }
+                }
+              
                 baza.Polaczenie.SubmitChanges();
-
                 MessageBox.Show("Usunięto pomyślnie", "Informacja");
             }
             wczytajPytania();

@@ -64,7 +64,10 @@ namespace Quiz
                     osoba.czy_admin = 0;
                     baza.Polaczenie.Uzytkownicies.InsertOnSubmit(osoba);
                     baza.Polaczenie.SubmitChanges();
+                    textBoxLogin.Text = "";
+                    textBoxHaslo.Text = "";
                     MessageBox.Show("Dodano użytkownika " + textBoxLogin.Text);
+
                 }
             }
         }

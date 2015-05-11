@@ -19,7 +19,7 @@ namespace Quiz
         public RejestracjaUC()
         {
             InitializeComponent();
-            noweHaslo.PasswordChar = '*';
+            
         }
 
         public RejestracjaUC(Logowanie logowanie)
@@ -27,6 +27,7 @@ namespace Quiz
             InitializeComponent();
             // TODO: Complete member initialization
             this.logowanie = logowanie;
+            noweHaslo.PasswordChar = '*';
         }
 
 
@@ -61,12 +62,20 @@ namespace Quiz
                     osoba.czy_admin = 0;
                     baza.Polaczenie.Uzytkownicies.InsertOnSubmit(osoba);
                     baza.Polaczenie.SubmitChanges();
+
+                    nowyUzytkownik.Text = " ";
+                    noweHaslo.Text = "";
                     MessageBox.Show("Dodano użytkownika");
                     
                     
                    
                 }
             }
+        }
+
+        private void RejestracjaUC_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

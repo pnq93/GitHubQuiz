@@ -47,16 +47,14 @@ namespace Quiz
                     {
                         MessageBox.Show("Użytkownik jest w systemie jako admin", "Zaalogowano jako admin");
                         logowanie.Hide();
-                        (new PanelAdmin()).Show();
-                        
-
-                         
+                        (new PanelAdmin()).Show();                                      
                     }
                     else
                     {
                         MessageBox.Show("Użytkownik jest w systemie jako zwykły użytkownik", "Zaalogowano");
-                        logowanie.Hide();
+                        logowanie.Hide();   
                         (new Game()).Show();
+                      
                         baza.Polaczenie.Gras.InsertOnSubmit(g);
                         baza.Polaczenie.SubmitChanges();
                     }
@@ -88,6 +86,11 @@ namespace Quiz
               logowanie.panel1.Controls.Clear();
               RejestracjaUC r = new RejestracjaUC();
               logowanie.panel1.Controls.Add(r);
+          }
+
+          private void Logowaniee_Load(object sender, EventArgs e)
+          {
+
           }
 
         }

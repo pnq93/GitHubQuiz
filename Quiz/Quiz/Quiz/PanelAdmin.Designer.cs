@@ -33,6 +33,7 @@
             this.dodajAdminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edycjaPytaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.wylogujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -41,10 +42,11 @@
             this.menuStripMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1,
             this.dodajAdminaToolStripMenuItem,
-            this.edycjaPytaniaToolStripMenuItem});
+            this.edycjaPytaniaToolStripMenuItem,
+            this.wylogujToolStripMenuItem});
             this.menuStripMenu.Location = new System.Drawing.Point(0, 0);
             this.menuStripMenu.Name = "menuStripMenu";
-            this.menuStripMenu.Size = new System.Drawing.Size(330, 24);
+            this.menuStripMenu.Size = new System.Drawing.Size(416, 24);
             this.menuStripMenu.TabIndex = 7;
             this.menuStripMenu.Text = "menuStripMenu";
             this.menuStripMenu.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStripMenu_ItemClicked);
@@ -79,12 +81,19 @@
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // wylogujToolStripMenuItem
+            // 
+            this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
+            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            this.wylogujToolStripMenuItem.Click += new System.EventHandler(this.wylogujToolStripMenuItem_Click);
+            // 
             // PanelAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(330, 274);
+            this.ClientSize = new System.Drawing.Size(416, 274);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStripMenu);
             this.MainMenuStrip = this.menuStripMenu;
@@ -106,5 +115,6 @@
         private System.Windows.Forms.ToolStripMenuItem dodajAdminaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem edycjaPytaniaToolStripMenuItem;
         public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ToolStripMenuItem wylogujToolStripMenuItem;
     }
 }
