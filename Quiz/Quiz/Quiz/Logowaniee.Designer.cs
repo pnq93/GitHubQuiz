@@ -38,12 +38,14 @@
             // 
             // login
             // 
+            this.login.BackColor = System.Drawing.Color.Lavender;
+            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.login.Location = new System.Drawing.Point(86, 67);
             this.login.Name = "login";
             this.login.Size = new System.Drawing.Size(100, 25);
             this.login.TabIndex = 13;
-            this.login.Text = "Zaloguj!";
-            this.login.UseVisualStyleBackColor = true;
+            this.login.Text = "Zaloguj";
+            this.login.UseVisualStyleBackColor = false;
             this.login.Click += new System.EventHandler(this.login_Click);
             // 
             // pass

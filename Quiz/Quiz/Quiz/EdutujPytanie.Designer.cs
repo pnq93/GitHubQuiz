@@ -66,12 +66,13 @@
             // 
             // buttonEdytuj
             // 
+            this.buttonEdytuj.BackColor = System.Drawing.Color.Lavender;
             this.buttonEdytuj.Location = new System.Drawing.Point(12, 299);
             this.buttonEdytuj.Name = "buttonEdytuj";
             this.buttonEdytuj.Size = new System.Drawing.Size(101, 34);
             this.buttonEdytuj.TabIndex = 3;
             this.buttonEdytuj.Text = "Edytuj";
-            this.buttonEdytuj.UseVisualStyleBackColor = true;
+            this.buttonEdytuj.UseVisualStyleBackColor = false;
             this.buttonEdytuj.Click += new System.EventHandler(this.buttonEdytuj_Click);
             // 
             // numericUpDownPoziom
@@ -119,22 +120,24 @@
             // 
             // buttonZapisz
             // 
+            this.buttonZapisz.BackColor = System.Drawing.Color.Lavender;
             this.buttonZapisz.Location = new System.Drawing.Point(119, 299);
             this.buttonZapisz.Name = "buttonZapisz";
             this.buttonZapisz.Size = new System.Drawing.Size(101, 34);
             this.buttonZapisz.TabIndex = 7;
             this.buttonZapisz.Text = "Zapisz";
-            this.buttonZapisz.UseVisualStyleBackColor = true;
+            this.buttonZapisz.UseVisualStyleBackColor = false;
             this.buttonZapisz.Click += new System.EventHandler(this.buttonZapisz_Click);
             // 
             // buttonUsun
             // 
+            this.buttonUsun.BackColor = System.Drawing.Color.Lavender;
             this.buttonUsun.Location = new System.Drawing.Point(226, 299);
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(101, 34);
             this.buttonUsun.TabIndex = 8;
             this.buttonUsun.Text = "Usuń pytanie";
-            this.buttonUsun.UseVisualStyleBackColor = true;
+            this.buttonUsun.UseVisualStyleBackColor = false;
             this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
             // 
             // comboBoxIleOdp
@@ -158,12 +161,13 @@
             // 
             // buttonDodajOdp
             // 
+            this.buttonDodajOdp.BackColor = System.Drawing.Color.Lavender;
             this.buttonDodajOdp.Location = new System.Drawing.Point(327, 94);
             this.buttonDodajOdp.Name = "buttonDodajOdp";
             this.buttonDodajOdp.Size = new System.Drawing.Size(107, 23);
             this.buttonDodajOdp.TabIndex = 10;
             this.buttonDodajOdp.Text = "Dodaj odpowiedź";
-            this.buttonDodajOdp.UseVisualStyleBackColor = true;
+            this.buttonDodajOdp.UseVisualStyleBackColor = false;
             this.buttonDodajOdp.Click += new System.EventHandler(this.buttonDodajOdp_Click);
             // 
             // label3
@@ -177,12 +181,13 @@
             // 
             // buttonCzysc
             // 
+            this.buttonCzysc.BackColor = System.Drawing.Color.Lavender;
             this.buttonCzysc.Location = new System.Drawing.Point(333, 299);
             this.buttonCzysc.Name = "buttonCzysc";
             this.buttonCzysc.Size = new System.Drawing.Size(101, 34);
             this.buttonCzysc.TabIndex = 12;
             this.buttonCzysc.Text = "Czyść pola ";
-            this.buttonCzysc.UseVisualStyleBackColor = true;
+            this.buttonCzysc.UseVisualStyleBackColor = false;
             this.buttonCzysc.Click += new System.EventHandler(this.buttonCzysc_Click);
             // 
             // label4
@@ -200,48 +205,53 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
-            this.panel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.panel1.Location = new System.Drawing.Point(185, 123);
+            this.panel1.Location = new System.Drawing.Point(241, 123);
+            this.panel1.Margin = new System.Windows.Forms.Padding(5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(449, 166);
+            this.panel1.Padding = new System.Windows.Forms.Padding(5);
+            this.panel1.Size = new System.Drawing.Size(314, 166);
             this.panel1.TabIndex = 14;
             this.panel1.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.panel1_ControlRemoved);
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // buttonDodajKat
             // 
+            this.buttonDodajKat.BackColor = System.Drawing.Color.Lavender;
             this.buttonDodajKat.Location = new System.Drawing.Point(333, 63);
             this.buttonDodajKat.Name = "buttonDodajKat";
             this.buttonDodajKat.Size = new System.Drawing.Size(99, 23);
             this.buttonDodajKat.TabIndex = 16;
             this.buttonDodajKat.Text = "Dodaj kategorie";
-            this.buttonDodajKat.UseVisualStyleBackColor = true;
+            this.buttonDodajKat.UseVisualStyleBackColor = false;
             this.buttonDodajKat.Click += new System.EventHandler(this.buttonDodajKat_Click);
             // 
             // buttonEdytujKat
             // 
+            this.buttonEdytujKat.BackColor = System.Drawing.Color.Lavender;
             this.buttonEdytujKat.Location = new System.Drawing.Point(438, 63);
             this.buttonEdytujKat.Name = "buttonEdytujKat";
             this.buttonEdytujKat.Size = new System.Drawing.Size(99, 23);
             this.buttonEdytujKat.TabIndex = 17;
             this.buttonEdytujKat.Text = "Edytuj kategorie";
-            this.buttonEdytujKat.UseVisualStyleBackColor = true;
+            this.buttonEdytujKat.UseVisualStyleBackColor = false;
             this.buttonEdytujKat.Click += new System.EventHandler(this.buttonEdytujKat_Click);
             // 
             // buttonUsunKat
             // 
+            this.buttonUsunKat.BackColor = System.Drawing.Color.Lavender;
             this.buttonUsunKat.Location = new System.Drawing.Point(543, 63);
             this.buttonUsunKat.Name = "buttonUsunKat";
             this.buttonUsunKat.Size = new System.Drawing.Size(99, 23);
             this.buttonUsunKat.TabIndex = 18;
             this.buttonUsunKat.Text = "Usuń kategorie";
-            this.buttonUsunKat.UseVisualStyleBackColor = true;
+            this.buttonUsunKat.UseVisualStyleBackColor = false;
             this.buttonUsunKat.Click += new System.EventHandler(this.buttonUsunKat_Click);
             // 
             // EdutujPytanie
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(652, 345);
             this.Controls.Add(this.buttonUsunKat);
             this.Controls.Add(this.buttonEdytujKat);
@@ -264,7 +274,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "EdutujPytanie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EdutujPytanie";
+            this.Text = "Edytuj pytanie";
             this.Load += new System.EventHandler(this.EdutujPytanie_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPoziom)).EndInit();
             this.ResumeLayout(false);

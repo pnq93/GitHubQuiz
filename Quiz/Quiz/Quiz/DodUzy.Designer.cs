@@ -55,12 +55,13 @@
             // 
             // buttonDodaj
             // 
+            this.buttonDodaj.BackColor = System.Drawing.Color.Lavender;
             this.buttonDodaj.Location = new System.Drawing.Point(77, 52);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(75, 23);
             this.buttonDodaj.TabIndex = 7;
             this.buttonDodaj.Text = "Dodaj";
-            this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.UseVisualStyleBackColor = false;
             this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
             // 
             // textBoxHaslo

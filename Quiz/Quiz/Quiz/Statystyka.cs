@@ -22,14 +22,25 @@ namespace Quiz
         public Statystyka(Game game)
         {
             InitializeComponent();
-            // TODO: Complete member initialization
             this.game = game;
-            listBoxWynik.Items.Clear();
-            listBoxWynik.Items.AddRange(baza.Polaczenie.Tables.OrderBy(o => o.wynik).ToArray());
-            listBoxWynik.DisplayMember = "wynik";
+
+
+            
+            richTextBoxStat.Text = "";
+            
+            foreach (Table r in baza.Polaczenie.Tables)
+            {
+                richTextBoxStat.AppendText(String.Format("Użytkownik: {0} --> {1} pkt. \n", r.uzytkownik_nazwa, r.wynik));      
+            }
+
         }
 
         private void listBoxWynik_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void richTextBoxStat_TextChanged(object sender, EventArgs e)
         {
 
         }

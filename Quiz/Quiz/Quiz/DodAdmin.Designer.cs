@@ -69,12 +69,13 @@
             // 
             // buttonDodaj
             // 
+            this.buttonDodaj.BackColor = System.Drawing.Color.Lavender;
             this.buttonDodaj.Location = new System.Drawing.Point(61, 55);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(100, 23);
             this.buttonDodaj.TabIndex = 4;
             this.buttonDodaj.Text = "Dodaj";
-            this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.UseVisualStyleBackColor = false;
             this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
             // 
             // DodAdmin

@@ -52,7 +52,13 @@ namespace Quiz
             
             panel1.Controls.Clear();
             EditUzyt eu = new EditUzyt(this);
+            EdycjaUzy euu = new EdycjaUzy(this);
+            
             panel1.Controls.Add(eu);
+            panel1.Controls.Add(euu);
+
+
+
             
         
         }

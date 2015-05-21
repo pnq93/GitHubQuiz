@@ -45,13 +45,13 @@ namespace Quiz
                     
                     if (admin == "1")
                     {
-                        MessageBox.Show("Użytkownik jest w systemie jako admin", "Zaalogowano jako admin");
+                      
                         logowanie.Hide();
                         (new PanelAdmin()).Show();                                      
                     }
                     else
                     {
-                        MessageBox.Show("Użytkownik jest w systemie jako zwykły użytkownik", "Zaalogowano");
+                        
                         logowanie.Hide();   
                         (new Game()).Show();
                       

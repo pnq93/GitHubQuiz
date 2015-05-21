@@ -41,7 +41,7 @@
             // 
             // obrazek
             // 
-            this.obrazek.Location = new System.Drawing.Point(12, 21);
+            this.obrazek.Location = new System.Drawing.Point(12, 27);
             this.obrazek.Name = "obrazek";
             this.obrazek.Size = new System.Drawing.Size(254, 114);
             this.obrazek.TabIndex = 0;
@@ -49,6 +49,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.nowaGraToolStripMenuItem,
             this.statystykaToolStripMenuItem,
@@ -99,6 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(278, 257);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.obrazek);

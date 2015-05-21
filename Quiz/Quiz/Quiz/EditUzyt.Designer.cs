@@ -45,32 +45,35 @@
             // 
             // buttonDodaj
             // 
+            this.buttonDodaj.BackColor = System.Drawing.Color.Lavender;
             this.buttonDodaj.Location = new System.Drawing.Point(0, 0);
             this.buttonDodaj.Name = "buttonDodaj";
             this.buttonDodaj.Size = new System.Drawing.Size(75, 23);
             this.buttonDodaj.TabIndex = 1;
             this.buttonDodaj.Text = "Dodaj";
-            this.buttonDodaj.UseVisualStyleBackColor = true;
+            this.buttonDodaj.UseVisualStyleBackColor = false;
             this.buttonDodaj.Click += new System.EventHandler(this.buttonDodaj_Click);
             // 
             // buttonEdytuj
             // 
+            this.buttonEdytuj.BackColor = System.Drawing.Color.Lavender;
             this.buttonEdytuj.Location = new System.Drawing.Point(81, 0);
             this.buttonEdytuj.Name = "buttonEdytuj";
             this.buttonEdytuj.Size = new System.Drawing.Size(75, 23);
             this.buttonEdytuj.TabIndex = 2;
             this.buttonEdytuj.Text = "Edytuj";
-            this.buttonEdytuj.UseVisualStyleBackColor = true;
+            this.buttonEdytuj.UseVisualStyleBackColor = false;
             this.buttonEdytuj.Click += new System.EventHandler(this.buttonEdytuj_Click);
             // 
             // buttonUsun
             // 
+            this.buttonUsun.BackColor = System.Drawing.Color.Lavender;
             this.buttonUsun.Location = new System.Drawing.Point(162, 0);
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(75, 23);
             this.buttonUsun.TabIndex = 3;
             this.buttonUsun.Text = "Usuń";
-            this.buttonUsun.UseVisualStyleBackColor = true;
+            this.buttonUsun.UseVisualStyleBackColor = false;
             this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
             // 
             // EditUzyt

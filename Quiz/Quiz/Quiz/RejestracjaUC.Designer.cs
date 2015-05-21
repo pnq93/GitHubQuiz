@@ -38,12 +38,13 @@
             // 
             // dodaj
             // 
+            this.dodaj.BackColor = System.Drawing.Color.Lavender;
             this.dodaj.Location = new System.Drawing.Point(85, 67);
             this.dodaj.Name = "dodaj";
             this.dodaj.Size = new System.Drawing.Size(100, 25);
             this.dodaj.TabIndex = 9;
             this.dodaj.Text = "Dodaj!";
-            this.dodaj.UseVisualStyleBackColor = true;
+            this.dodaj.UseVisualStyleBackColor = false;
             this.dodaj.Click += new System.EventHandler(this.dodaj_Click);
             // 
             // noweHaslo

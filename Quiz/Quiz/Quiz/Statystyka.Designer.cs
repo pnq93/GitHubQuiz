@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxWynik = new System.Windows.Forms.ListBox();
+            this.richTextBoxStat = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // listBoxWynik
+            // richTextBoxStat
             // 
-            this.listBoxWynik.FormattingEnabled = true;
-            this.listBoxWynik.Location = new System.Drawing.Point(0, 0);
-            this.listBoxWynik.Name = "listBoxWynik";
-            this.listBoxWynik.Size = new System.Drawing.Size(277, 121);
-            this.listBoxWynik.TabIndex = 0;
-            this.listBoxWynik.SelectedIndexChanged += new System.EventHandler(this.listBoxWynik_SelectedIndexChanged);
+            this.richTextBoxStat.Enabled = false;
+            this.richTextBoxStat.Location = new System.Drawing.Point(3, 3);
+            this.richTextBoxStat.Name = "richTextBoxStat";
+            this.richTextBoxStat.Size = new System.Drawing.Size(274, 122);
+            this.richTextBoxStat.TabIndex = 0;
+            this.richTextBoxStat.Text = "";
+            this.richTextBoxStat.TextChanged += new System.EventHandler(this.richTextBoxStat_TextChanged);
             // 
             // Statystyka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.listBoxWynik);
+            this.Controls.Add(this.richTextBoxStat);
             this.Name = "Statystyka";
             this.Size = new System.Drawing.Size(280, 125);
             this.ResumeLayout(false);
@@ -53,6 +54,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ListBox listBoxWynik;
+        private System.Windows.Forms.RichTextBox richTextBoxStat;
+
     }
 }

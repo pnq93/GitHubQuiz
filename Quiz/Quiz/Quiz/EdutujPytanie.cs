@@ -63,7 +63,7 @@ namespace Quiz
 
         private void buttonEdytuj_Click(object sender, EventArgs e)
         {
-            
+
             panel1.Controls.Clear();
             ile = 0;
             if (listBoxPytania.SelectedItem == null)
@@ -97,12 +97,12 @@ namespace Quiz
                 }
             }
             int liczbaUC = iloscUC();
-            foreach(DodawanieOdpowiedzi odp in panel1.Controls)
+            foreach (DodawanieOdpowiedzi odp in panel1.Controls)
             {
                 odp.liczenie(liczbaUC);
             }
         }
-      
+
         private void buttonZapisz_Click(object sender, EventArgs e)
         {
             int ileO = 0;
@@ -251,16 +251,16 @@ namespace Quiz
 
                 baza.Polaczenie.Pytanias.DeleteAllOnSubmit(usunPyt);
 
-            
+
                 foreach (Odpowiedzi o in baza.Polaczenie.Odpowiedzis)
                 {
                     if (id == o.id_pytania)
                     {
- baza.Polaczenie.Odpowiedzis.DeleteOnSubmit(o);
- 
+                        baza.Polaczenie.Odpowiedzis.DeleteOnSubmit(o);
+
                     }
-                       
-                    
+
+
                 }
 
                 foreach (Zadane_Pytania z in baza.Polaczenie.Zadane_Pytanias)
@@ -268,13 +268,19 @@ namespace Quiz
                     if (id == z.id_pytania)
                     {
                         baza.Polaczenie.Zadane_Pytanias.DeleteOnSubmit(z);
-                       
+
                     }
                 }
-              
+
                 baza.Polaczenie.SubmitChanges();
                 MessageBox.Show("Usunięto pomyślnie", "Informacja");
             }
+            pom = 0;
+            textBoxPytanie.Text = "";
+            numericUpDownPoziom.Value = 0;
+            comboBoxIleOdp.Text = "";
+            comboBoxKategoria.Text = "";
+            panel1.Controls.Clear();
             wczytajPytania();
 
         }
@@ -310,7 +316,7 @@ namespace Quiz
                     for (Int32 i = 0; i < ileodp; i++)
                     {
                         DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi();
-                        generator.Location = new Point(2,  move);
+                        generator.Location = new Point(2, move);
                         generator.Size = new System.Drawing.Size(generator.Width, 45);
                         panel1.Controls.Add(generator);
                         move += 5;
@@ -333,9 +339,9 @@ namespace Quiz
             comboBoxIleOdp.Text = "";
             comboBoxKategoria.Text = "";
             panel1.Controls.Clear();
-            var Form = new EdutujPytanie();
-            this.Close();
-            Form.Show();
+            // var Form = new EdutujPytanie();
+            // this.Close();
+            // Form.Show();
 
         }
 
@@ -378,14 +384,14 @@ namespace Quiz
             {
                 Kategoria kat = baza.Polaczenie.Kategorias.Where(x => x.nazwa == comboBoxKategoria.Text).ToArray().First();
 
-                var Form = new EdytujKategorie(kat,comboBoxKategoria.Text);
+                var Form = new EdytujKategorie(kat, comboBoxKategoria.Text);
                 Form.Show();
             }
             else
             {
                 MessageBox.Show("Nie można edytować pustej kategori", "Informacja");
             }
-           
+
 
         }
         public bool sprawdzKategorie()
@@ -425,16 +431,16 @@ namespace Quiz
                         var usunKat = baza.Polaczenie.Kategorias.Where(u => u.nazwa == comboBoxKategoria.Text);
                         baza.Polaczenie.Kategorias.DeleteAllOnSubmit(usunKat);
                         baza.Polaczenie.SubmitChanges();
-                        MessageBox.Show("Kategoria została usunięta");               
+                        MessageBox.Show("Kategoria została usunięta");
                     }
-                }               
+                }
             }
             else
             {
                 MessageBox.Show("Nie wybrano żadnej kategori do usunięcia");
             }
             usunComboBoxKategoria();
-           // wypelnijComboBoxKategoria();
+            // wypelnijComboBoxKategoria();
         }
 
         private void panel1_ControlRemoved(object sender, ControlEventArgs e)

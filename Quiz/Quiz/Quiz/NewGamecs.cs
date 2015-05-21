@@ -12,6 +12,7 @@ namespace Quiz
 {
     public partial class NewGamecs : Form
     {
+        string nazwaUzyykonika;
         int idU;
         int ileNiePoprawnych = 0;
         int ktorePyt = 0;
@@ -346,8 +347,7 @@ namespace Quiz
                     }
 
 
-                    Logowanie noweOkno = new Logowanie(wynik);
-                    Statistics noweOknp = new Statistics(wynik, uzytkownik);
+                  
 
 
                     MessageBox.Show("Wynik: " + wynik + " pkt." + "\n " + "Niepoprawne odpowiedzi: " + ileNiePoprawnych, "Koniec rozgrywki");
@@ -362,10 +362,41 @@ namespace Quiz
                     {
                         idU = gg.id_uzytkownika;
                     }
-                    stat.id_uzytkownika = idU;
-                    stat.wynik = wynik;
+                    foreach(Uzytkownicy u in baza.Polaczenie.Uzytkownicies)
+                    {
+                        if(idU == u.Id)
+                        {
+                            nazwaUzyykonika = u.user_name;
+                        }
+                    }
 
-                    baza.Polaczenie.Tables.InsertOnSubmit(stat);
+                    foreach(Table t in baza.Polaczenie.Tables)
+                    {
+                        if(t.id_uzytkownika == idU)
+                        {
+                           
+                            if(t.wynik <= wynik)
+                            {
+                                baza.Polaczenie.Tables.DeleteOnSubmit(t);
+                                stat.wynik = wynik;
+                                stat.id_uzytkownika = idU;
+                                stat.uzytkownik_nazwa = nazwaUzyykonika;
+                                baza.Polaczenie.Tables.InsertOnSubmit(stat);
+                            }
+                        }
+                        else
+                        {                         
+                                stat.wynik = wynik;
+                                stat.id_uzytkownika = idU;
+                                stat.uzytkownik_nazwa = nazwaUzyykonika;
+                                baza.Polaczenie.Tables.InsertOnSubmit(stat);                        
+                        }
+                    }
+                   // stat.id_uzytkownika = idU;
+                    //stat.wynik = wynik;
+                   // stat.uzytkownik_nazwa = nazwaUzyykonika;
+
+                   // baza.Polaczenie.Tables.InsertOnSubmit(stat);
                     foreach (Udzielona_odpowiedz u in baza.Polaczenie.Udzielona_odpowiedzs)
                     {
                         baza.Polaczenie.Udzielona_odpowiedzs.DeleteOnSubmit(u);

@@ -343,7 +343,6 @@ E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.DodawanieO
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.EdutujPytanie.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.NewGamecs.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.PanelAdmin.resources
-E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Statistics.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Uzytkownik.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Game.resources
 E:\Inżynieria\Ćwiczenia\GH\GitHubQuiz\Quiz\Quiz\Quiz\obj\Debug\Quiz.Logowanie.resources

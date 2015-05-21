@@ -9,14 +9,14 @@
       <Association Name="Uzytkownicy_Gra" Member="Uzytkownicy" ThisKey="id_uzytkownika" OtherKey="Id" Type="Uzytkownicy" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Zadane_Pytania" Member="Zadane_Pytanias">
-    <Type Name="Zadane_Pytania">
+  <Table Name="dbo.Uzytkownicy" Member="Uzytkownicies">
+    <Type Name="Uzytkownicy">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="id_gra" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="id_pytania" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Zadane_Pytania_Udzielona_odpowiedz" Member="Udzielona_odpowiedzs" ThisKey="Id" OtherKey="id_zadane_pytanie" Type="Udzielona_odpowiedz" />
-      <Association Name="Gra_Zadane_Pytania" Member="Gra" ThisKey="id_gra" OtherKey="Id" Type="Gra" IsForeignKey="true" />
-      <Association Name="Pytania_Zadane_Pytania" Member="Pytania" ThisKey="id_pytania" OtherKey="Id" Type="Pytania" IsForeignKey="true" />
+      <Column Name="user_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="czy_admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Uzytkownicy_Gra" Member="Gras" ThisKey="Id" OtherKey="id_uzytkownika" Type="Gra" />
+      <Association Name="Uzytkownicy_Table" Member="Tables" ThisKey="Id" OtherKey="id_uzytkownika" Type="Table" />
     </Type>
   </Table>
   <Table Name="dbo.Kategoria" Member="Kategorias">
@@ -42,8 +42,8 @@
       <Column Name="id_typ" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="tresc" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
       <Column Name="id_kategoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Pytania_Zadane_Pytania" Member="Zadane_Pytanias" ThisKey="Id" OtherKey="id_pytania" Type="Zadane_Pytania" />
       <Association Name="Pytania_Odpowiedzi" Member="Odpowiedzis" ThisKey="Id" OtherKey="id_pytania" Type="Odpowiedzi" />
+      <Association Name="Pytania_Zadane_Pytania" Member="Zadane_Pytanias" ThisKey="Id" OtherKey="id_pytania" Type="Zadane_Pytania" />
       <Association Name="Kategoria_Pytania" Member="Kategoria" ThisKey="id_kategoria" OtherKey="Id" Type="Kategoria" IsForeignKey="true" />
       <Association Name="Typ_pytania_Pytania" Member="Typ_pytania" ThisKey="id_typ" OtherKey="Id" Type="Typ_pytania" IsForeignKey="true" />
     </Type>
@@ -53,6 +53,7 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="wynik" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_uzytkownika" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="uzytkownik_nazwa" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Association Name="Uzytkownicy_Table" Member="Uzytkownicy" ThisKey="id_uzytkownika" OtherKey="Id" Type="Uzytkownicy" IsForeignKey="true" />
     </Type>
   </Table>
@@ -68,18 +69,18 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="id_odpowiedzi" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="id_zadane_pytanie" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Zadane_Pytania_Udzielona_odpowiedz" Member="Zadane_Pytania" ThisKey="id_zadane_pytanie" OtherKey="Id" Type="Zadane_Pytania" IsForeignKey="true" />
       <Association Name="Odpowiedzi_Udzielona_odpowiedz" Member="Odpowiedzi" ThisKey="id_odpowiedzi" OtherKey="Id" Type="Odpowiedzi" IsForeignKey="true" />
+      <Association Name="Zadane_Pytania_Udzielona_odpowiedz" Member="Zadane_Pytania" ThisKey="id_zadane_pytanie" OtherKey="Id" Type="Zadane_Pytania" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Uzytkownicy" Member="Uzytkownicies">
-    <Type Name="Uzytkownicy">
+  <Table Name="dbo.Zadane_Pytania" Member="Zadane_Pytanias">
+    <Type Name="Zadane_Pytania">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="user_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="czy_admin" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Association Name="Uzytkownicy_Gra" Member="Gras" ThisKey="Id" OtherKey="id_uzytkownika" Type="Gra" />
-      <Association Name="Uzytkownicy_Table" Member="Tables" ThisKey="Id" OtherKey="id_uzytkownika" Type="Table" />
+      <Column Name="id_gra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="id_pytania" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Zadane_Pytania_Udzielona_odpowiedz" Member="Udzielona_odpowiedzs" ThisKey="Id" OtherKey="id_zadane_pytanie" Type="Udzielona_odpowiedz" />
+      <Association Name="Gra_Zadane_Pytania" Member="Gra" ThisKey="id_gra" OtherKey="Id" Type="Gra" IsForeignKey="true" />
+      <Association Name="Pytania_Zadane_Pytania" Member="Pytania" ThisKey="id_pytania" OtherKey="Id" Type="Pytania" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

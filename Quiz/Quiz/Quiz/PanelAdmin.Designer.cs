@@ -32,8 +32,8 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.dodajAdminaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.edycjaPytaniaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.wylogujToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStripMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,13 @@
             this.edycjaPytaniaToolStripMenuItem.Text = "Edycja pytania";
             this.edycjaPytaniaToolStripMenuItem.Click += new System.EventHandler(this.edycjaPytaniaToolStripMenuItem_Click);
             // 
+            // wylogujToolStripMenuItem
+            // 
+            this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
+            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.wylogujToolStripMenuItem.Text = "Wyloguj";
+            this.wylogujToolStripMenuItem.Click += new System.EventHandler(this.wylogujToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.AutoSize = true;
@@ -81,25 +88,19 @@
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // wylogujToolStripMenuItem
-            // 
-            this.wylogujToolStripMenuItem.Name = "wylogujToolStripMenuItem";
-            this.wylogujToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.wylogujToolStripMenuItem.Text = "Wyloguj";
-            this.wylogujToolStripMenuItem.Click += new System.EventHandler(this.wylogujToolStripMenuItem_Click);
-            // 
             // PanelAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(416, 274);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStripMenu);
             this.MainMenuStrip = this.menuStripMenu;
             this.Name = "PanelAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PanelAdmin";
+            this.Text = "Panel admin";
             this.Load += new System.EventHandler(this.PanelAdmin_Load);
             this.menuStripMenu.ResumeLayout(false);
             this.menuStripMenu.PerformLayout();

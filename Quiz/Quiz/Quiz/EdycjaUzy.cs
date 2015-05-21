@@ -16,6 +16,7 @@ namespace Quiz
         private bazaDanychQuizDataContext bazaDanychQuizDataContext;
         private Uzytkownicy uzytkownicy;
         Haszowanie hash = new Haszowanie();
+        private PanelAdmin panelAdmin;
 
         public EdycjaUzy()
         {
@@ -43,6 +44,14 @@ namespace Quiz
             }
         }
 
+        public EdycjaUzy(PanelAdmin panelAdmin)
+        {
+            InitializeComponent();
+            // TODO: Complete member initialization
+            this.panelAdmin = panelAdmin;
+           
+        }
+
         private void EdycjaUzy_Load(object sender, EventArgs e)
         {
 
@@ -68,7 +77,10 @@ namespace Quiz
                 if (textBoxAdmin != null)
                     uzytkownicy.czy_admin = Convert.ToInt32(textBoxAdmin.Text);
                 baza.Polaczenie.SubmitChanges();
+                this.Parent.Controls.Clear();
+             
                 MessageBox.Show("Użytkownik został zedytowany");
+               
             }
             else
             {
@@ -78,6 +90,11 @@ namespace Quiz
 
 
 
+
+        }
+
+        private void bindingSource1_CurrentChanged(object sender, EventArgs e)
+        {
 
         }
     }
