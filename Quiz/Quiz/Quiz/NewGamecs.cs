@@ -101,25 +101,10 @@ namespace Quiz
 
         private void NewGamecs_Load(object sender, EventArgs e)
         {
-            /*  Gra g = new Gra();
-              Zadane_Pytania zp = new Zadane_Pytania();
-              g.Zadane_Pytanias.Add(zp);
-              baza.Polaczenie.Gras.InsertOnSubmit(g);
-              baza.Polaczenie.SubmitChanges();*/
-
-
-
-
         }
 
         private void dalej_Click(object sender, EventArgs e)
         {
-
-
-            //progressBar1.Minimum = 0;
-            //  progressBar1.Maximum = 4;
-            // progressBar1.ForeColor = Color.Red;
-            // progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             if (odp1.Checked || odp2.Checked || odp3.Checked || odp4.Checked)
             {
                 if (pom == 0)
@@ -130,72 +115,53 @@ namespace Quiz
                         ud.id_odpowiedzi = idOdp1;
                         if (odp1.Text == poprawnaOdp)
                         {
-                            //  MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            // MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
-
                         }
                     }
                     if (odp2.Checked == true)
                     {
                         ud.id_odpowiedzi = idOdp2;
                         if (odp2.Text == poprawnaOdp)
-                        {
-                            //  MessageBox.Show("Poprawna");
+                        {                           
                             iloscPunktow.Add(poziomPytania);
-
                         }
                         else
                         {
-                            //  MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
-
                         }
                     }
-
                     if (odp3.Checked == true)
                     {
                         ud.id_odpowiedzi = idOdp3;
                         if (odp3.Text == poprawnaOdp)
                         {
-                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
-
                         }
                         else
                         {
-                            //  MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
-
                         }
                     }
-
                     if (odp4.Checked == true)
                     {
                         ud.id_odpowiedzi = idOdp4;
                         if (odp4.Text == poprawnaOdp)
                         {
-                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
-
                         }
                         else
                         {
-                            //   MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
-
                         }
                     }
-
-
                     foreach (Zadane_Pytania zp in baza.Polaczenie.Zadane_Pytanias)
                     {
                         id_zadPyt = zp.Id;
@@ -203,25 +169,20 @@ namespace Quiz
                     pom += 1;
                     ud.id_zadane_pytanie = id_zadPyt;
                     baza.Polaczenie.Udzielona_odpowiedzs.InsertOnSubmit(ud);
-
                     baza.Polaczenie.SubmitChanges();
-
                 }
                 else if (pom == 1)
                 {
-
                     Udzielona_odpowiedz ud = new Udzielona_odpowiedz();
                     if (odp1.Checked == true)
                     {
                         ud.id_odpowiedzi = iidOdp1;
                         if (odp1.Text == poprawnaOdp)
                         {
-                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            //   MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
@@ -231,12 +192,10 @@ namespace Quiz
                         ud.id_odpowiedzi = iidOdp2;
                         if (odp2.Text == poprawnaOdp)
                         {
-                            //MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            //  MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
@@ -246,12 +205,10 @@ namespace Quiz
                         ud.id_odpowiedzi = iidOdp3;
                         if (odp3.Text == poprawnaOdp)
                         {
-                            // MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            //   MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
@@ -261,12 +218,10 @@ namespace Quiz
                         ud.id_odpowiedzi = iidOdp4;
                         if (odp4.Text == poprawnaOdp)
                         {
-                            //   MessageBox.Show("Poprawna");
                             iloscPunktow.Add(poziomPytania);
                         }
                         else
                         {
-                            //MessageBox.Show("Nie poprawna");
                             ileNiePoprawnych += 1;
                             iloscPunktow.Add(0);
                         }
@@ -277,15 +232,12 @@ namespace Quiz
                     }
                     ud.id_zadane_pytanie = id_zadPyt;
                     baza.Polaczenie.Udzielona_odpowiedzs.InsertOnSubmit(ud);
-
                     baza.Polaczenie.SubmitChanges();
                 }
-
                 if (licznik < 5)
                 {
                     ktorePyt += 1;
                     labelIlePyt.Text = ktorePyt + "/5";
-                    //progressBar1.Value = licznik;
                     losowanePytanie.Text = "";
                     odp1.Text = "";
                     odp1.Checked = false;
@@ -330,11 +282,9 @@ namespace Quiz
 
                         zp.id_pytania = baza.Polaczenie.Pytanias.Where(v => v.Id == idpyt[z]).Select(s => s.Id).First();
                         zp.id_gra = id_gry;
-                        //zp.Pytania = baza.Polaczenie.Pytanias.Single(p => p.Id == 49);
-                        // MessageBox.Show("zd " + zp.id_pytania + " idgry " + id_gry);
+
                         baza.Polaczenie.Zadane_Pytanias.InsertOnSubmit(zp);
                         baza.Polaczenie.SubmitChanges();
-
 
                         idpyt.RemoveAt(z);
                     }
@@ -346,17 +296,7 @@ namespace Quiz
                         wynik += iloscPunktow[i];
                     }
 
-
-                  
-
-
                     MessageBox.Show("Wynik: " + wynik + " pkt." + "\n " + "Niepoprawne odpowiedzi: " + ileNiePoprawnych, "Koniec rozgrywki");
-
-                    /*   Gra g = new Gra();
-               Zadane_Pytania zp = new Zadane_Pytania();
-               g.Zadane_Pytanias.Add(zp);
-               baza.Polaczenie.Gras.InsertOnSubmit(g);
-               baza.Polaczenie.SubmitChanges();*/
 
                     foreach (Gra gg in baza.Polaczenie.Gras)
                     {
@@ -370,7 +310,7 @@ namespace Quiz
                         }
                     }
 
-                    foreach(Table t in baza.Polaczenie.Tables)
+                  /*  foreach(Table t in baza.Polaczenie.Tables)
                     {
                         if(t.id_uzytkownika == idU)
                         {
@@ -391,12 +331,11 @@ namespace Quiz
                                 stat.uzytkownik_nazwa = nazwaUzyykonika;
                                 baza.Polaczenie.Tables.InsertOnSubmit(stat);                        
                         }
-                    }
-                   // stat.id_uzytkownika = idU;
-                    //stat.wynik = wynik;
-                   // stat.uzytkownik_nazwa = nazwaUzyykonika;
-
-                   // baza.Polaczenie.Tables.InsertOnSubmit(stat);
+                    }*/
+                    stat.wynik = wynik;
+                    stat.id_uzytkownika = idU;
+                    stat.uzytkownik_nazwa = nazwaUzyykonika;
+                    baza.Polaczenie.Tables.InsertOnSubmit(stat); 
                     foreach (Udzielona_odpowiedz u in baza.Polaczenie.Udzielona_odpowiedzs)
                     {
                         baza.Polaczenie.Udzielona_odpowiedzs.DeleteOnSubmit(u);

@@ -56,6 +56,7 @@
             this.listBoxPytania.Name = "listBoxPytania";
             this.listBoxPytania.Size = new System.Drawing.Size(152, 277);
             this.listBoxPytania.TabIndex = 0;
+            this.listBoxPytania.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBoxPytania_MouseClick);
             // 
             // textBoxPytanie
             // 
@@ -67,13 +68,13 @@
             // buttonEdytuj
             // 
             this.buttonEdytuj.BackColor = System.Drawing.Color.Lavender;
-            this.buttonEdytuj.Location = new System.Drawing.Point(12, 299);
+            this.buttonEdytuj.Location = new System.Drawing.Point(543, 312);
             this.buttonEdytuj.Name = "buttonEdytuj";
             this.buttonEdytuj.Size = new System.Drawing.Size(101, 34);
             this.buttonEdytuj.TabIndex = 3;
             this.buttonEdytuj.Text = "Edytuj";
             this.buttonEdytuj.UseVisualStyleBackColor = false;
-            this.buttonEdytuj.Click += new System.EventHandler(this.buttonEdytuj_Click);
+            this.buttonEdytuj.Visible = false;
             // 
             // numericUpDownPoziom
             // 
@@ -121,7 +122,7 @@
             // buttonZapisz
             // 
             this.buttonZapisz.BackColor = System.Drawing.Color.Lavender;
-            this.buttonZapisz.Location = new System.Drawing.Point(119, 299);
+            this.buttonZapisz.Location = new System.Drawing.Point(12, 299);
             this.buttonZapisz.Name = "buttonZapisz";
             this.buttonZapisz.Size = new System.Drawing.Size(101, 34);
             this.buttonZapisz.TabIndex = 7;
@@ -132,7 +133,7 @@
             // buttonUsun
             // 
             this.buttonUsun.BackColor = System.Drawing.Color.Lavender;
-            this.buttonUsun.Location = new System.Drawing.Point(226, 299);
+            this.buttonUsun.Location = new System.Drawing.Point(119, 299);
             this.buttonUsun.Name = "buttonUsun";
             this.buttonUsun.Size = new System.Drawing.Size(101, 34);
             this.buttonUsun.TabIndex = 8;
@@ -182,11 +183,11 @@
             // buttonCzysc
             // 
             this.buttonCzysc.BackColor = System.Drawing.Color.Lavender;
-            this.buttonCzysc.Location = new System.Drawing.Point(333, 299);
+            this.buttonCzysc.Location = new System.Drawing.Point(226, 299);
             this.buttonCzysc.Name = "buttonCzysc";
             this.buttonCzysc.Size = new System.Drawing.Size(101, 34);
             this.buttonCzysc.TabIndex = 12;
-            this.buttonCzysc.Text = "Czyść pola ";
+            this.buttonCzysc.Text = "Czyść pola / Dodaj pytanie";
             this.buttonCzysc.UseVisualStyleBackColor = false;
             this.buttonCzysc.Click += new System.EventHandler(this.buttonCzysc_Click);
             // 
@@ -272,6 +273,7 @@
             this.Controls.Add(this.textBoxPytanie);
             this.Controls.Add(this.listBoxPytania);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
             this.Name = "EdutujPytanie";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Edytuj pytanie";

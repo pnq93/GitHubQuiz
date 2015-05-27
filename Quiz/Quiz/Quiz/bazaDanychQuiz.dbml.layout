@@ -2,121 +2,121 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 10.375" name="bazaDanychQuiz">
   <DataContextMoniker Name="/bazaDanychQuizDataContext" />
   <nestedChildShapes>
-    <classShape Id="a1192d30-5f22-416d-9730-d7ead5008462" absoluteBounds="3.5, 5.625, 2, 1.3862939453125005">
+    <classShape Id="81b2de26-ac93-4fbd-ae4d-a67b5382401d" absoluteBounds="3.5, 5.625, 2, 1.3862939453125005">
       <DataClassMoniker Name="/bazaDanychQuizDataContext/Gra" />
       <nestedChildShapes>
-        <elementListCompartment Id="f1ddea26-2447-478a-8116-0245edecb963" absoluteBounds="3.515, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="b7fb27bc-a685-4d83-adf3-e779a3d61142" absoluteBounds="3.515, 6.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="67dfede7-83e7-4fed-b912-394df2f9c107" absoluteBounds="0.75, 5.5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Uzytkownicy" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b6cd4aa5-6012-4814-a9a8-a52c58871146" absoluteBounds="0.765, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="6ae71273-38a4-4732-b4a6-f71e9743f098" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Kategoria" />
-      <nestedChildShapes>
-        <elementListCompartment Id="09b54eee-79ec-4540-a528-46afd43ddcd8" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="f835b2f0-2b2d-43bf-9e8b-55e0280f9fa3" absoluteBounds="6.25, 4.75, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Odpowiedzi" />
-      <nestedChildShapes>
-        <elementListCompartment Id="9752bbcf-d9f4-41d4-832e-dc1e60909826" absoluteBounds="6.265, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="a9717b12-9880-4b09-95f2-5b14309c8da2" absoluteBounds="3.5, 2.5, 2, 1.578595377604167">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Pytania" />
-      <nestedChildShapes>
-        <elementListCompartment Id="69df423b-0cae-4087-be85-402c1e42c5e7" absoluteBounds="3.515, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="69b8bc28-5db8-4e07-aa15-17057229b187" absoluteBounds="3.5, 8.5, 2, 1.5785953776041666">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Table" />
-      <nestedChildShapes>
-        <elementListCompartment Id="675c66bc-5c50-435d-a9c0-8d650bfaaff1" absoluteBounds="3.515, 8.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="03b545ba-13e8-4724-9911-ef1bcb490c41" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Typ_pytania" />
-      <nestedChildShapes>
-        <elementListCompartment Id="1fd3b075-9a4e-454b-966e-1719e371f5c1" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="00193d45-6028-40f6-8d79-14709ec86e87" absoluteBounds="9, 3.25, 2, 1.3862939453125009">
-      <DataClassMoniker Name="/bazaDanychQuizDataContext/Udzielona_odpowiedz" />
-      <nestedChildShapes>
-        <elementListCompartment Id="cf2c460a-257a-48c8-827d-ae0e09834ff6" absoluteBounds="9.015, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="837e6985-183f-4984-b321-b792ab282e52" absoluteBounds="6.25, 1.625, 2, 1.3862939453125003">
+    <classShape Id="62524a4c-379e-4922-b6a2-838b1f6dca14" absoluteBounds="6.25, 1.625, 2, 1.3862939453125003">
       <DataClassMoniker Name="/bazaDanychQuizDataContext/Zadane_Pytania" />
       <nestedChildShapes>
-        <elementListCompartment Id="3ca93126-8bef-4e01-b21b-2fef2aabfca5" absoluteBounds="6.265, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f0843817-bef5-4eda-88f5-e2942e2b4919" absoluteBounds="6.265, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 6.31814697265625); (3.5 : 6.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bazaDanychQuizDataContext/Uzytkownicy/Uzytkownicy_Gra" />
+    <classShape Id="6ac4391b-3f1b-43d4-8eda-181506838d95" absoluteBounds="0.75, 2.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Kategoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f09e06a0-1d9b-4b10-b1c4-95590809e15f" absoluteBounds="0.765, 3.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="984d42ef-0974-463f-a9fc-db9373bdcce5" absoluteBounds="6.25, 4.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Odpowiedzi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9b6ff3df-cc97-4ea1-8377-ed913abcc2a0" absoluteBounds="6.265, 5.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c4822595-f787-4ce9-8cc1-a2b883bf375c" absoluteBounds="3.5, 2.5, 2, 1.578595377604167">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Pytania" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fc28743f-b2ea-492b-a2f4-c210455746a3" absoluteBounds="3.515, 2.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9829f634-7940-4ffe-b253-e20430c0ce4c" absoluteBounds="3.5, 8.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Table" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e9194fae-d437-4008-bcdd-da45a4c21195" absoluteBounds="3.515, 8.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="59df366a-2e4a-4c93-b2c2-680c213009cf" absoluteBounds="0.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Typ_pytania" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d6a122ea-8024-4fc7-a4f0-f4b889186ff3" absoluteBounds="0.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="bc23cc38-0eb0-49d8-8162-b609d1309954" absoluteBounds="9, 3.25, 2, 1.3862939453125009">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Udzielona_odpowiedz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94dd4060-097d-48e6-8d0b-6091bdb59e23" absoluteBounds="9.015, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9401e6e8-0c36-41d3-82fd-8eee7ca5b1ef" absoluteBounds="0.75, 5.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/bazaDanychQuizDataContext/Uzytkownicy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53f578eb-86eb-4fa4-abd2-fd9b3e4251e2" absoluteBounds="0.765, 5.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.5 : 5.625); (5.875 : 5.25); (5.875 : 2.31814697265625); (6.25 : 2.31814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazaDanychQuizDataContext/Gra/Gra_Zadane_Pytania" />
       <nodes>
-        <classShapeMoniker Id="67dfede7-83e7-4fed-b912-394df2f9c107" />
-        <classShapeMoniker Id="a1192d30-5f22-416d-9730-d7ead5008462" />
+        <classShapeMoniker Id="81b2de26-ac93-4fbd-ae4d-a67b5382401d" />
+        <classShapeMoniker Id="62524a4c-379e-4922-b6a2-838b1f6dca14" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.07738007346755); (5.875 : 4.45238007346755); (5.875 : 4.375); (6.00357443490112 : 4.50357443490112 : JumpStart); (6.12142556509888 : 4.62142556509888 : JumpEnd); (6.25 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 2.75564697265625); (5.79166666666667 : 2.75564697265625 : JumpStart); (5.95833333333333 : 2.75564697265625 : JumpEnd); (6.25 : 2.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazaDanychQuizDataContext/Pytania/Pytania_Zadane_Pytania" />
+      <nodes>
+        <classShapeMoniker Id="c4822595-f787-4ce9-8cc1-a2b883bf375c" />
+        <classShapeMoniker Id="62524a4c-379e-4922-b6a2-838b1f6dca14" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 4.0154505625); (5.81607443490112 : 4.33152499740112 : JumpStart); (5.93392556509888 : 4.44937612759888 : JumpEnd); (6.1875 : 4.7029505625); (6.1875 : 4.6875); (6.25 : 4.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/bazaDanychQuizDataContext/Pytania/Pytania_Odpowiedzi" />
       <nodes>
-        <classShapeMoniker Id="a9717b12-9880-4b09-95f2-5b14309c8da2" />
-        <classShapeMoniker Id="f835b2f0-2b2d-43bf-9e8b-55e0280f9fa3" />
+        <classShapeMoniker Id="c4822595-f787-4ce9-8cc1-a2b883bf375c" />
+        <classShapeMoniker Id="984d42ef-0974-463f-a9fc-db9373bdcce5" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 3.34699625651042); (3.5 : 3.34699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/bazaDanychQuizDataContext/Kategoria/Kategoria_Pytania" />
       <nodes>
-        <classShapeMoniker Id="6ae71273-38a4-4732-b4a6-f71e9743f098" />
-        <classShapeMoniker Id="a9717b12-9880-4b09-95f2-5b14309c8da2" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(1.75 : 7.07859537760417); (1.75 : 9.28929768880208); (3.5 : 9.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bazaDanychQuizDataContext/Uzytkownicy/Uzytkownicy_Table" />
-      <nodes>
-        <classShapeMoniker Id="67dfede7-83e7-4fed-b912-394df2f9c107" />
-        <classShapeMoniker Id="69b8bc28-5db8-4e07-aa15-17057229b187" />
+        <classShapeMoniker Id="6ac4391b-3f1b-43d4-8eda-181506838d95" />
+        <classShapeMoniker Id="c4822595-f787-4ce9-8cc1-a2b883bf375c" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 1.34699625651042); (4.5 : 1.34699625651042); (4.5 : 2.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/bazaDanychQuizDataContext/Typ_pytania/Typ_pytania_Pytania" />
       <nodes>
-        <classShapeMoniker Id="03b545ba-13e8-4724-9911-ef1bcb490c41" />
-        <classShapeMoniker Id="a9717b12-9880-4b09-95f2-5b14309c8da2" />
-      </nodes>
-    </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 5.53929768880208); (10 : 5.53929768880208); (10 : 4.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bazaDanychQuizDataContext/Odpowiedzi/Odpowiedzi_Udzielona_odpowiedz" />
-      <nodes>
-        <classShapeMoniker Id="f835b2f0-2b2d-43bf-9e8b-55e0280f9fa3" />
-        <classShapeMoniker Id="00193d45-6028-40f6-8d79-14709ec86e87" />
+        <classShapeMoniker Id="59df366a-2e4a-4c93-b2c2-680c213009cf" />
+        <classShapeMoniker Id="c4822595-f787-4ce9-8cc1-a2b883bf375c" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(8.25 : 2.31814697265625); (10 : 2.31814697265625); (10 : 3.25)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/bazaDanychQuizDataContext/Zadane_Pytania/Zadane_Pytania_Udzielona_odpowiedz" />
       <nodes>
-        <classShapeMoniker Id="837e6985-183f-4984-b321-b792ab282e52" />
-        <classShapeMoniker Id="00193d45-6028-40f6-8d79-14709ec86e87" />
+        <classShapeMoniker Id="62524a4c-379e-4922-b6a2-838b1f6dca14" />
+        <classShapeMoniker Id="bc23cc38-0eb0-49d8-8162-b609d1309954" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.6868490375601); (6.0625 : 5.1243490375601); (6.0625 : 2.31814697265625); (6.25 : 2.31814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bazaDanychQuizDataContext/Gra/Gra_Zadane_Pytania" />
+    <associationConnector edgePoints="[(8.25 : 5.53929768880208); (10 : 5.53929768880208); (10 : 4.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazaDanychQuizDataContext/Odpowiedzi/Odpowiedzi_Udzielona_odpowiedz" />
       <nodes>
-        <classShapeMoniker Id="a1192d30-5f22-416d-9730-d7ead5008462" />
-        <classShapeMoniker Id="837e6985-183f-4984-b321-b792ab282e52" />
+        <classShapeMoniker Id="984d42ef-0974-463f-a9fc-db9373bdcce5" />
+        <classShapeMoniker Id="bc23cc38-0eb0-49d8-8162-b609d1309954" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.75564697265625); (5.97916666666667 : 2.75564697265625 : JumpStart); (6.14583333333333 : 2.75564697265625 : JumpEnd); (6.25 : 2.75564697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/bazaDanychQuizDataContext/Pytania/Pytania_Zadane_Pytania" />
+    <associationConnector edgePoints="[(2.75 : 6.31814697265625); (3.5 : 6.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazaDanychQuizDataContext/Uzytkownicy/Uzytkownicy_Gra" />
       <nodes>
-        <classShapeMoniker Id="a9717b12-9880-4b09-95f2-5b14309c8da2" />
-        <classShapeMoniker Id="837e6985-183f-4984-b321-b792ab282e52" />
+        <classShapeMoniker Id="9401e6e8-0c36-41d3-82fd-8eee7ca5b1ef" />
+        <classShapeMoniker Id="81b2de26-ac93-4fbd-ae4d-a67b5382401d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 7.07859537760417); (1.75 : 9.28929768880208); (3.5 : 9.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/bazaDanychQuizDataContext/Uzytkownicy/Uzytkownicy_Table" />
+      <nodes>
+        <classShapeMoniker Id="9401e6e8-0c36-41d3-82fd-8eee7ca5b1ef" />
+        <classShapeMoniker Id="9829f634-7940-4ffe-b253-e20430c0ce4c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

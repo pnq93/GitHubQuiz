@@ -53,10 +53,11 @@
             // 
             // buttonUsun
             // 
-            this.buttonUsun.BackgroundImage = global::Quiz.Properties.Resources.kosz1;
-            this.buttonUsun.Location = new System.Drawing.Point(237, 1);
+            this.buttonUsun.BackgroundImage = global::Quiz.Properties.Resources._01;
+            this.buttonUsun.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.buttonUsun.Location = new System.Drawing.Point(237, 5);
             this.buttonUsun.Name = "buttonUsun";
-            this.buttonUsun.Size = new System.Drawing.Size(33, 34);
+            this.buttonUsun.Size = new System.Drawing.Size(27, 27);
             this.buttonUsun.TabIndex = 4;
             this.buttonUsun.UseVisualStyleBackColor = true;
             this.buttonUsun.Click += new System.EventHandler(this.buttonUsun_Click);
@@ -69,7 +70,7 @@
             this.Controls.Add(this.checkBoxCzyPrawda);
             this.Controls.Add(this.textBoxOdpowiedz);
             this.Name = "DodawanieOdpowiedzi";
-            this.Size = new System.Drawing.Size(271, 34);
+            this.Size = new System.Drawing.Size(271, 36);
             this.Load += new System.EventHandler(this.DodawanieOdpowiedzi_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

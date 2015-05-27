@@ -69,6 +69,7 @@
             this.Controls.Add(this.buttonZapisz);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxKategoria);
+            this.MinimizeBox = false;
             this.Name = "EdytujKategorie";
             this.Text = "EdytujKategorie";
             this.Load += new System.EventHandler(this.EdytujKategorie_Load);

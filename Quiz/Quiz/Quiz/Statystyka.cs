@@ -30,7 +30,8 @@ namespace Quiz
             
             foreach (Table r in baza.Polaczenie.Tables)
             {
-                richTextBoxStat.AppendText(String.Format("Użytkownik: {0} --> {1} pkt. \n", r.uzytkownik_nazwa, r.wynik));      
+                richTextBoxStat.AppendText(String.Format("Użytkownik: {0} --> {1} pkt. \n", r.uzytkownik_nazwa, r.wynik)); 
+                
             }
 
         }
@@ -41,6 +42,11 @@ namespace Quiz
         }
 
         private void richTextBoxStat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Statystyka_Load(object sender, EventArgs e)
         {
 
         }

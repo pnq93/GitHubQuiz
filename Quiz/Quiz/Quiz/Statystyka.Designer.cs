@@ -48,6 +48,7 @@
             this.Controls.Add(this.richTextBoxStat);
             this.Name = "Statystyka";
             this.Size = new System.Drawing.Size(280, 125);
+            this.Load += new System.EventHandler(this.Statystyka_Load);
             this.ResumeLayout(false);
 
         }

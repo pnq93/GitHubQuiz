@@ -97,7 +97,10 @@
             this.ClientSize = new System.Drawing.Size(416, 274);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStripMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MainMenuStrip = this.menuStripMenu;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "PanelAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel admin";

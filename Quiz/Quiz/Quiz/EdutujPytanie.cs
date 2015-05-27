@@ -61,7 +61,7 @@ namespace Quiz
             // TODO: This line of code loads data into the 'bazaDanychQuizDataSet.Kategoria' table. You can move, or remove it, as needed.
         }
 
-        private void buttonEdytuj_Click(object sender, EventArgs e)
+       /* private void buttonEdytuj_Click(object sender, EventArgs e)
         {
 
             panel1.Controls.Clear();
@@ -101,7 +101,7 @@ namespace Quiz
             {
                 odp.liczenie(liczbaUC);
             }
-        }
+        }*/
 
         private void buttonZapisz_Click(object sender, EventArgs e)
         {
@@ -456,6 +456,64 @@ namespace Quiz
         {
 
         }
+
+        private void listBoxPytania_MouseClick(object sender, MouseEventArgs e)
+        {
+
+            Pytania pyt = listBoxPytania.SelectedItem as Pytania;
+            foreach (Zadane_Pytania p in baza.Polaczenie.Zadane_Pytanias)
+            {
+                if (p.id_pytania == pyt.Id)
+                {
+                    baza.Polaczenie.Zadane_Pytanias.DeleteOnSubmit(p);
+                }
+            }
+            baza.Polaczenie.SubmitChanges();
+
+            panel1.Controls.Clear();
+            ile = 0;
+            if (listBoxPytania.SelectedItem == null)
+            {
+                MessageBox.Show("Nie wybrano żadnego elementu", "Błąd edycji");
+            }
+            else
+            {
+                pom = 1;
+                Pytania pytanie = listBoxPytania.SelectedItem as Pytania;
+
+                pom2 = pytanie.Id;
+                if (listBoxPytania.SelectedItem == null)
+                {
+                    MessageBox.Show("Nie wybrano żadnego elementu", "Błąd edycji");
+                }
+                else
+                {
+                    textBoxPytanie.Text = pytanie.tresc;
+                    numericUpDownPoziom.Value = baza.Polaczenie.Typ_pytanias.Where(x => x.Id == pytanie.id_typ).Select(s => s.poziom).ToArray().First();
+                    comboBoxKategoria.Text = baza.Polaczenie.Kategorias.Where(x => x.Id == pytanie.id_kategoria).Select(s => s.nazwa).ToArray().First();
+                    int move = 0;
+                    panel1.Controls.Clear();
+                    foreach (Odpowiedzi odp in pytanie.Odpowiedzis)
+                    {
+                        DodawanieOdpowiedzi generator = new DodawanieOdpowiedzi(odp);
+                        generator.Location = new Point(5, 10 + move);
+                        panel1.Controls.Add(generator);
+                        move += 35;
+                    }
+                }
+            }
+            int liczbaUC = iloscUC();
+            foreach (DodawanieOdpowiedzi odp in panel1.Controls)
+            {
+                odp.liczenie(liczbaUC);
+            }
+         
+           
+        }
+
+        
+
+        
     }
 }
 

@@ -47,6 +47,7 @@
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.obszar);
+            this.MinimizeBox = false;
             this.Name = "Uzytkownik";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uzytkownik";

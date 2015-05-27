@@ -20,6 +20,8 @@ namespace Quiz
         public Logowanie()
         {
             InitializeComponent();
+            //this.MaximumSize = this.Size;
+           // this.MinimumSize = this.Size; 
             obrazek.Image = new Bitmap(Image.FromFile("E:/Inżynieria/Quiz/Quiz/pobrane.jpg"));
             obrazek.SizeMode = PictureBoxSizeMode.StretchImage;
             button1.Text = "Rejestracja";
